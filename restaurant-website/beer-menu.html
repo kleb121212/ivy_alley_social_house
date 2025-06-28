@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beer & Drinks</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900 p-6">
+    <nav class="bg-white shadow p-4 mb-6">
+        <ul class="flex space-x-4">
+            <li><a href="index.html" class="font-bold">Home</a></li>
+            <li><a href="food-menu.html">Food Menu</a></li>
+            <li><a href="beer-menu.html">Drinks</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="bowling.html">Duckpin Bowling</a></li>
+        </ul>
+    </nav>
+
+    <div id="drink-menu-nav" class="mb-8">
+        <!-- JS will inject the category links here -->
+    </div>
+
+    <main class="max-w-6xl mx-auto">
+        <div id="drink-menu-container" class="space-y-12 flex flex-col"></div>
+    </main>
+
+    <main class="max-w-6xl mx-auto">
+        <div id="drink-menu-container" class="space-y-12 flex flex-col"></div>
+    </main>
+
+    <script src="js/beer-menu.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+Name,Description,Price,Image,Category
+Margherita Pizza,"Classic with fresh mozzarella & basil",12,margherita.jpg,Pizzas
+BBQ Chicken Pizza,"Smoked chicken with house BBQ sauce",14,bbq-chicken.jpg,Pizzas
+Veggie Deluxe,"Piled high with seasonal vegetables",13,veggie.jpg,Pizzas
+Garlic Knots,"Oven-baked with garlic butter",6,knots.jpg,Appetizers
+Meatballs,"Beef and pork blend, slow cooked",9,meatballs.jpg,Appetizers
+House Salad,"Mixed greens, tomato, cucumber",7,salad.jpg,Salads
+Caesar Salad,"Romaine, parm, croutons, caesar dressing",8,,Salads
+Buffalo Wings,"Spicy and crispy, served with ranch",10,wings.jpg,Appetizers
+Pepperoni Pizza,"Classic pepperoni & mozzarella",13,pepperoni.jpg,Pizzas
+Prosciutto & Arugula,"Thinly sliced prosciutto with arugula",15,,Pizzas
+Pesto Flatbread,"Light and herby",11,pesto.jpg,Specials
+Truffle Fries,"With parmesan and aioli",8,truffle-fries.jpg,Sides
+Chocolate Lava Cake,"Gooey center, served warm",9,lava.jpg,Desserts
+Cannoli,"Sweet ricotta-filled pastry",5,cannoli.jpg,Desserts
+Tiramisu,"Coffee-soaked layers with mascarpone",6,tiramisu.jpg,Desserts

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900 p-6">
+    <nav class="bg-white shadow p-4">
+        <ul class="flex space-x-4">
+            <li><a href="index.html" class="font-bold">Home</a></li>
+            <li><a href="food-menu.html">Food Menu</a></li>
+            <li><a href="beer-menu.html">Drinks</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="bowling.html">Duckpin Bowling</a></li>
+        </ul>
+    </nav>
+    <main class="max-w-4xl mx-auto py-10 px-4">
+        <h1 class="text-4xl font-bold mb-8">Upcoming Events</h1>
+        <div id="events-container" class="space-y-12"></div>
+    </main>
+
+    <script src="js/events.js"></script>
+</body>
+
+</html>
