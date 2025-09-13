@@ -5,13 +5,79 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home | Ivy Alley</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
-  <link rel="stylesheet" href="assets/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivy: "#465f36",
+            ecru: "#f0eadc",
+            dark: "#2f2f2f",
+            rust: "#9a3c00",
+            slate: "#4f697a",
+            gold: "#c39a4d",
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Brand Colors */
+    .bg-primary {
+      background-color: #465f36;
+    }
+
+    .bg-secondary {
+      background-color: #9a3c00;
+    }
+
+    .bg-accent {
+      background-color: #4f697a;
+    }
+
+    .bg-light {
+      background-color: #f0eadc;
+    }
+
+    .bg-dark {
+      background-color: #2f2f2f;
+    }
+
+    .text-primary {
+      color: #465f36;
+    }
+
+    .text-secondary {
+      color: #9a3c00;
+    }
+
+    .text-accent {
+      color: #4f697a;
+    }
+
+    .text-light {
+      color: #f0eadc;
+    }
+
+    .text-dark {
+      color: #2f2f2f;
+    }
+
+    a {
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #c39a4d;
+    }
+  </style>
 </head>
 
-<body class="bg-gray-100 text-gray-900 p-6">
-  <nav class="bg-white shadow p-4">
-    <ul class="flex space-x-4">
+<body class="bg-light text-dark p-6">
+  <!-- Navigation -->
+  <nav class="bg-primary text-light shadow p-4 rounded-xl">
+    <ul class="flex space-x-6">
       <li><a href="index.html" class="font-bold">Home</a></li>
       <li><a href="food-menu.html">Food Menu</a></li>
       <li><a href="beer-menu.html">Drinks</a></li>
@@ -20,42 +86,46 @@
     </ul>
   </nav>
 
+  <!-- Main -->
   <main class="p-6 max-w-3xl mx-auto">
-    <section class="mb-6">
-      <h1 class="text-3xl font-bold mb-2">Welcome to Ivy Alley Social House!</h1>
+    <!-- Welcome -->
+    <section class="mb-8">
+      <h1 class="text-4xl font-bold mb-3 text-primary">Welcome to Ivy Alley Social House!</h1>
       <p class="text-lg italic">About us coming soon.</p>
-      <p class="text-lg italic">
-        <a href="about.html" target="_blank" class="text-blue-500 underline">
+      <p class="text-lg italic mt-2">
+        <a href="about.html" target="_blank" class="text-secondary underline">
           Learn More!
         </a>
       </p>
     </section>
 
-    <section class="mb-6">
-      <h2 class="text-xl font-semibold">Hours</h2>
+    <!-- Hours -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold text-accent mb-2">Hours</h2>
       <p>Coming late 2025</p>
     </section>
 
-    <section>
-      <h2 class="text-xl font-semibold">Contact</h2>
+    <!-- Contact -->
+    <section class="bg-white shadow-md rounded-xl p-6">
+      <h2 class="text-2xl font-semibold text-accent mb-4">Contact</h2>
       <p>Phone: (xxx) xxx-xxxx</p>
       <p>Email: example@email.com</p>
-      <p>
+      <p class="mt-2">
         Address:
-        <a href="https://www.google.com/maps/place/Ivy+Alley+Social+House/@41.6737819,-86.2573992,17z/data=!3m1!4b1!4m6!3m5!1s0x8816cd515eada11f:0x335bb6542db6df76!8m2!3d41.6737819!4d-86.2548243!16s%2Fg%2F11yf3bbtzh?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
-          target="_blank" class="text-blue-500 underline">
+        <a href="https://www.google.com/maps/place/Ivy+Alley+Social+House" target="_blank"
+          class="text-secondary underline">
           321 W. Wayne St. South Bend, IN
         </a>
       </p>
       <p>
         Facebook:
-        <a href="https://www.facebook.com/share/12JWpbcXHDR/" class="text-blue-500 underline" target="_blank">
+        <a href="https://www.facebook.com/share/12JWpbcXHDR/" target="_blank" class="text-secondary underline">
           Visit our page
         </a>
       </p>
       <p>
         Gallery:
-        <a href="gallery.html" class="text-blue-500 underline" target="_blank">
+        <a href="gallery.html" target="_blank" class="text-secondary underline">
           Check out our process!
         </a>
       </p>

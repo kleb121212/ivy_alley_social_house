@@ -17,120 +17,82 @@
             rust: "#9a3c00",
             slate: "#4f697a",
             gold: "#c39a4d",
+          },
+          fontFamily: {
+            sans: ['"Helvetica Neue"', "Arial", "sans-serif"],
           }
         }
       }
     }
   </script>
-  <style>
-    /* Brand Colors */
-    .bg-primary {
-      background-color: #465f36;
-    }
-
-    .bg-secondary {
-      background-color: #9a3c00;
-    }
-
-    .bg-accent {
-      background-color: #4f697a;
-    }
-
-    .bg-light {
-      background-color: #f0eadc;
-    }
-
-    .bg-dark {
-      background-color: #2f2f2f;
-    }
-
-    .text-primary {
-      color: #465f36;
-    }
-
-    .text-secondary {
-      color: #9a3c00;
-    }
-
-    .text-accent {
-      color: #4f697a;
-    }
-
-    .text-light {
-      color: #f0eadc;
-    }
-
-    .text-dark {
-      color: #2f2f2f;
-    }
-
-    a {
-      transition: color 0.2s ease;
-    }
-
-    a:hover {
-      color: #c39a4d;
-    }
-  </style>
 </head>
 
-<body class="bg-light text-dark p-6">
+<body class="bg-gradient-to-br from-ivy via-dark to-slate text-ecru font-sans">
   <!-- Navigation -->
-  <nav class="bg-primary text-light shadow p-4 rounded-xl">
-    <ul class="flex space-x-6">
-      <li><a href="index.html" class="font-bold">Home</a></li>
-      <li><a href="food-menu.html">Food Menu</a></li>
-      <li><a href="beer-menu.html">Drinks</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="bowling.html">Duckpin Bowling</a></li>
-    </ul>
+  <nav class="bg-ecru text-ivy shadow-md sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+      <span class="text-2xl font-bold tracking-wide">Ivy Alley</span>
+      <ul class="flex space-x-6 text-lg">
+        <li><a href="index.html"
+            class="relative hover:text-rust after:content-[''] after:block after:h-[2px] after:bg-gold after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 after:origin-left">Home</a>
+        </li>
+        <li><a href="food-menu.html" class="hover:text-rust">Food Menu</a></li>
+        <li><a href="beer-menu.html" class="hover:text-rust">Drinks</a></li>
+        <li><a href="events.html" class="hover:text-rust">Events</a></li>
+        <li><a href="bowling.html" class="hover:text-rust">Duckpin Bowling</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- Main -->
-  <main class="p-6 max-w-3xl mx-auto">
+  <main class="p-6 max-w-4xl mx-auto space-y-12">
     <!-- Welcome -->
-    <section class="mb-8">
-      <h1 class="text-4xl font-bold mb-3 text-primary">Welcome to Ivy Alley Social House!</h1>
-      <p class="text-lg italic">About us coming soon.</p>
-      <p class="text-lg italic mt-2">
-        <a href="about.html" target="_blank" class="text-secondary underline">
-          Learn More!
-        </a>
-      </p>
+    <section class="bg-ecru text-ivy shadow-lg rounded-2xl p-8 text-center">
+      <h1 class="text-5xl font-extrabold mb-4 tracking-tight">Welcome to Ivy Alley Social House!</h1>
+      <p class="text-xl italic mb-4">About us coming soon.</p>
+      <a href="about.html" target="_blank"
+        class="inline-block mt-2 px-6 py-3 bg-rust text-ecru rounded-lg shadow-md hover:bg-gold hover:text-dark transition">
+        Learn More
+      </a>
     </section>
 
     <!-- Hours -->
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold text-accent mb-2">Hours</h2>
-      <p>Coming late 2025</p>
+    <section class="bg-dark text-ecru shadow-md rounded-xl p-6 border-l-4 border-gold">
+      <h2 class="text-3xl font-semibold mb-3 text-gold">Hours</h2>
+      <p class="text-lg">Coming late 2025</p>
     </section>
 
     <!-- Contact -->
-    <section class="bg-white shadow-md rounded-xl p-6">
-      <h2 class="text-2xl font-semibold text-accent mb-4">Contact</h2>
-      <p>Phone: (xxx) xxx-xxxx</p>
-      <p>Email: example@email.com</p>
-      <p class="mt-2">
-        Address:
-        <a href="https://www.google.com/maps/place/Ivy+Alley+Social+House" target="_blank"
-          class="text-secondary underline">
-          321 W. Wayne St. South Bend, IN
-        </a>
-      </p>
-      <p>
-        Facebook:
-        <a href="https://www.facebook.com/share/12JWpbcXHDR/" target="_blank" class="text-secondary underline">
-          Visit our page
-        </a>
-      </p>
-      <p>
-        Gallery:
-        <a href="gallery.html" target="_blank" class="text-secondary underline">
-          Check out our process!
-        </a>
-      </p>
+    <section class="bg-ecru text-ivy shadow-md rounded-xl p-8">
+      <h2 class="text-3xl font-semibold mb-4 text-slate">Contact</h2>
+      <div class="space-y-2 text-lg">
+        <p><strong>Phone:</strong> (xxx) xxx-xxxx</p>
+        <p><strong>Email:</strong> example@email.com</p>
+        <p><strong>Address:</strong>
+          <a href="https://www.google.com/maps/place/Ivy+Alley+Social+House" target="_blank"
+            class="text-rust hover:text-gold underline">
+            321 W. Wayne St. South Bend, IN
+          </a>
+        </p>
+        <p><strong>Facebook:</strong>
+          <a href="https://www.facebook.com/share/12JWpbcXHDR/" target="_blank"
+            class="text-rust hover:text-gold underline">
+            Visit our page
+          </a>
+        </p>
+        <p><strong>Gallery:</strong>
+          <a href="gallery.html" target="_blank" class="text-rust hover:text-gold underline">
+            Check out our process!
+          </a>
+        </p>
+      </div>
     </section>
   </main>
+
+  <!-- Footer -->
+  <footer class="mt-12 bg-dark text-ecru py-6 text-center border-t border-gold">
+    <p class="text-sm">&copy; 2025 Ivy Alley Social House | All Rights Reserved</p>
+  </footer>
 </body>
 
 </html>
