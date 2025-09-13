@@ -5,8 +5,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home | Ivy Alley</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
-
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivy: "#465f36",
+            ecru: "#f0eadc",
+            dark: "#2f2f2f",
+            rust: "#9a3c00",
+            slate: "#4f697a",
+            gold: "#c39a4d",
+          }
+        }
+      }
+    }
+  </script>
   <style>
     /* Brand Colors */
     .bg-primary {
