@@ -1,0 +1,11 @@
+- top bar categories are cut off on mobile
+- footer is cutoff on mobile
+- can scroll sideways for no reason on mobile
+- Hopefully get the pillars on the sides of the screen
+    - If not, make a watermark of the logo for the background
+- Put the logo in the upper right
+- Put the inidividual icons next to the page categories
+- Make the design consistent across all the pages
+- remove space between last section and footer if possible
+- See if I can make the events in a legit calendar format
+- put an order here button at the top of the food menu
