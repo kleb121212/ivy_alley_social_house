@@ -4,7 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | Ivy Alley</title>
+  <title>Ivy Alley Social House</title>
+
+  <!-- Google Fonts: Figtree -->
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -17,51 +22,19 @@
             rust: "#9a3c00",
             slate: "#4f697a",
             gold: "#c39a4d",
-          }
+          },
+          fontFamily: {
+            figtree: ['Figtree', 'sans-serif'],
+            title: ['"Josefin Sans"', 'sans-serif']
+          },
         }
       }
     }
   </script>
+
   <style>
-    /* Brand Colors */
-    .bg-primary {
-      background-color: #465f36;
-    }
-
-    .bg-secondary {
-      background-color: #9a3c00;
-    }
-
-    .bg-accent {
-      background-color: #4f697a;
-    }
-
-    .bg-light {
-      background-color: #f0eadc;
-    }
-
-    .bg-dark {
-      background-color: #2f2f2f;
-    }
-
-    .text-primary {
-      color: #465f36;
-    }
-
-    .text-secondary {
-      color: #9a3c00;
-    }
-
-    .text-accent {
-      color: #4f697a;
-    }
-
-    .text-light {
-      color: #f0eadc;
-    }
-
-    .text-dark {
-      color: #2f2f2f;
+    body {
+      min-height: 100vh;
     }
 
     a {
@@ -71,66 +44,124 @@
     a:hover {
       color: #c39a4d;
     }
+
+    /* linen background (bottom layer) */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url('https://www.transparenttextures.com/patterns/linen.png');
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 0;
+      /* set to 0 so it's visible */
+    }
+
+    /* faded background image (top layer) */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: url('assets/Ivy_Alley_Line_Black.png') no-repeat center center;
+      background-size: 100%;
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 1;
+      /* slightly above linen */
+    }
+
+    .logo-img {
+      height: 50px;
+      /* adjust as needed */
+      width: auto;
+    }
   </style>
 </head>
 
-<body class="bg-light text-dark p-6">
-  <!-- Navigation -->
-  <nav class="bg-primary text-light shadow p-4 rounded-xl">
-    <ul class="flex space-x-6">
-      <li><a href="index.html" class="font-bold">Home</a></li>
-      <li><a href="food-menu.html">Food Menu</a></li>
-      <li><a href="beer-menu.html">Drinks</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="bowling.html">Duckpin Bowling</a></li>
-    </ul>
-  </nav>
+<body class="flex flex-col min-h-screen text-dark font-figtree relative z-10 bg-ecru">
 
-  <!-- Main -->
-  <main class="p-6 max-w-3xl mx-auto">
-    <!-- Welcome -->
-    <section class="mb-8">
-      <h1 class="text-4xl font-bold mb-3 text-primary">Welcome to Ivy Alley Social House!</h1>
-      <p class="text-lg italic">About us coming soon.</p>
-      <p class="text-lg italic mt-2">
-        <a href="about.html" target="_blank" class="text-secondary underline">
-          Learn More!
-        </a>
-      </p>
-    </section>
+  <main class="flex-grow">
 
-    <!-- Hours -->
-    <section class="mb-8">
-      <h2 class="text-2xl font-semibold text-accent mb-2">Hours</h2>
-      <p>Coming late 2025</p>
-    </section>
+    <!-- Navbar -->
+    <nav class="bg-dark/90 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b-2 border-gold">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-wrap justify-between items-center">
+        <!-- Logo replaces text -->
+        <a href="index.html" class="logo-link">
+          <img src="assets/Ivy_Alley_Horizontal_Ecru.png" alt="Ivy Alley Logo" class="logo-img">
+        </a>
+        <ul
+          class="flex flex-wrap gap-4 sm:space-x-6 text-sm sm:text-base md:text-lg font-semibold font-figtree text-ecru mt-2 sm:mt-0 uppercase">
+          <!-- Removed Home link -->
+          <li><a href="food-menu.html" class="hover:text-rust">Food</a></li>
+          <li><a href="beer-menu.html" class="hover:text-rust">Drinks</a></li>
+          <li><a href="events.html" class="hover:text-rust">Events</a></li>
+          <li><a href="bowling.html" class="hover:text-rust">Duckpin</a></li>
+        </ul>
+      </div>
+    </nav>
 
-    <!-- Contact -->
-    <section class="bg-white shadow-md rounded-xl p-6">
-      <h2 class="text-2xl font-semibold text-accent mb-4">Contact</h2>
-      <p>Phone: (xxx) xxx-xxxx</p>
-      <p>Email: example@email.com</p>
-      <p class="mt-2">
-        Address:
-        <a href="https://www.google.com/maps/place/Ivy+Alley+Social+House" target="_blank"
-          class="text-secondary underline">
-          321 W. Wayne St. South Bend, IN
-        </a>
+
+    <!-- Hero Section -->
+    <section class="w-full relative py-36 flex flex-col items-center justify-center text-center bg-ecru/95 shadow-xl">
+      <h1 class="text-6xl font-black font-title text-ivy mb-6 tracking-[0.1em] uppercase">
+        Ivy Alley Social House
+      </h1>
+      <p class="text-2xl italic mb-8 text-slate max-w-2xl font-figtree">
+        A cozy craft social house blending modern vibes with an industrial edge
       </p>
-      <p>
-        Facebook:
-        <a href="https://www.facebook.com/share/12JWpbcXHDR/" target="_blank" class="text-secondary underline">
-          Visit our page
-        </a>
-      </p>
-      <p>
-        Gallery:
-        <a href="gallery.html" target="_blank" class="text-secondary underline">
-          Check out our process!
-        </a>
-      </p>
+      <a href="about.html" target="_blank"
+        class="px-10 py-4 bg-rust text-ecru font-semibold font-figtree rounded-lg shadow-md hover:bg-gold hover:text-dark transition uppercase tracking-wide">
+        About Us
+      </a>
+
+      <!-- Hours Section -->
+      <section
+        class="max-w-6xl mx-auto my-16 px-6 py-12 bg-dark/85 rounded-2xl shadow-lg border-l-4 border-gold text-center">
+        <h2 class="text-4xl font-semibold font-figtree text-gold mb-6 tracking-[0.05em] uppercase">Hours</h2>
+        <p class="text-xl text-ecru font-figtree">Opening late 2025 – stay tuned!</p>
+      </section>
+
+      <!-- Contact Section -->
+      <section
+        class="max-w-6xl mx-auto mb-16 px-6 py-12 bg-ecru/90 rounded-2xl shadow-lg border-r-4 border-slate text-dark">
+        <h2 class="text-4xl font-semibold font-figtree text-ivy mb-6 tracking-[0.05em] uppercase">Contact</h2>
+        <div class="space-y-4 text-lg text-ivy font-figtree">
+          <p><strong>Phone:</strong> (xxx) xxx-xxxx</p>
+          <p><strong>Email:</strong> example@email.com</p>
+          <p><strong>Address:</strong>
+            <a href="https://www.google.com/maps/place/Ivy+Alley+Social+House" target="_blank"
+              class="text-rust hover:text-gold underline">
+              321 W. Wayne St. South Bend, IN
+            </a>
+          </p>
+          <p><strong>Facebook:</strong>
+            <a href="https://www.facebook.com/share/12JWpbcXHDR/" target="_blank"
+              class="text-rust hover:text-gold underline">
+              Visit our page
+            </a>
+          </p>
+          <p><strong>Gallery:</strong>
+            <a href="gallery.html" target="_blank" class="text-rust hover:text-gold underline">
+              Check out our process!
+            </a>
+          </p>
+        </div>
+      </section>
     </section>
   </main>
+
+  <footer
+    class="relative bg-ecru border-t border-slate w-full text-center text-ecru tracking-wider uppercase py-6 font-figtree">
+    <!-- Art Deco accent spanning full width -->
+    <div class="absolute top-0 left-0 w-full h-16 overflow-hidden">
+      <svg class="w-full h-full" viewBox="0 0 100 20" preserveAspectRatio="none">
+        <polygon points="0,20 100,20 100,0 0,10" fill="#465f36" />
+      </svg>
+    </div>
+
+    <p class="relative z-10 text-sm">&copy; 2025 Ivy Alley Social House | All Rights Reserved</p>
+  </footer>
+
 </body>
 
 </html>
