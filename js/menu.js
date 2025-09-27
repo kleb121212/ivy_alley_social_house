@@ -1,72 +1,85 @@
 // js/menu.js
-document.addEventListener("DOMContentLoaded", () => {
-  const menuContainer = document.getElementById("food-menu-container");
-  const menuNav = document.getElementById("food-menu-nav");
 
-  // === Embedded menu data ===
-  const items = [
-    { Name: "Margherita Pizza", Description: "Classic pizza with fresh mozzarella, basil, and tomato sauce.", Price: "12.99", Image: "assets/margherita.jpg", Category: "Pizza" },
-    { Name: "Pepperoni Pizza", Description: "Loaded with pepperoni and mozzarella cheese.", Price: "13.99", Image: "assets/pepperoni.jpg", Category: "Pizza" },
-    { Name: "Caesar Salad", Description: "Crisp romaine lettuce with Caesar dressing and croutons.", Price: "9.99", Image: "", Category: "Salads" },
-    { Name: "Buffalo Wings", Description: "Spicy chicken wings served with blue cheese dip.", Price: "11.99", Image: "assets/wings.jpg", Category: "Appetizers" },
-    { Name: "Chocolate Cake", Description: "Rich chocolate cake with ganache.", Price: "6.99", Image: "", Category: "Desserts" },
-    // Add all your menu items here
+document.addEventListener("DOMContentLoaded", function () {
+  const menuData = [
+    { Name: "Margherita Pizza", Description: "Classic tomato & mozzarella", Price: "$12", Image: "assets/pizza-margherita.jpg", Category: "Pizza" },
+    { Name: "Pepperoni Pizza", Description: "Pepperoni & cheese", Price: "$14", Image: "assets/pizza-pepperoni.jpg", Category: "Pizza" },
+    { Name: "Caesar Salad", Description: "Romaine, Caesar dressing, croutons", Price: "$10", Image: "", Category: "Salads" },
+    { Name: "Buffalo Wings", Description: "Spicy wings with ranch", Price: "$11", Image: "assets/wings.jpg", Category: "Appetizers" },
+    { Name: "Buffalo Wings", Description: "Spicy wings with ranch", Price: "$11", Image: "assets/wings.jpg", Category: "Noodles" },
+    { Name: "Buffalo Wings", Description: "Spicy wings with ranch", Price: "$11", Image: "assets/wings.jpg", Category: "Smoodles" },
+    { Name: "Buffalo Wings", Description: "Spicy wings with ranch", Price: "$11", Image: "assets/wings.jpg", Category: "Poatoes" },
+    { Name: "Buffalo Wings", Description: "Spicy wings with ranch", Price: "$11", Image: "assets/wings.jpg", Category: "Brunch" },
+    { Name: "Buffalo Wings", Description: "Spicy wings with ranch", Price: "$11", Image: "assets/wings.jpg", Category: "FUCK" },
+    { Name: "Buffalo Wings", Description: "Spicy wings with ranch", Price: "$11", Image: "assets/wings.jpg", Category: "test" }
+    // add more items here...
   ];
 
-  // === Generate category buttons ===
-  const categories = [...new Set(items.map(item => item.Category))];
+  // Get unique categories
+  const categories = [...new Set(menuData.map(item => item.Category))];
 
+  // Populate category buttons
+  const menuNav = document.getElementById("food-menu-nav");
   categories.forEach(cat => {
     const btn = document.createElement("button");
     btn.textContent = cat;
-    btn.className = "px-4 py-2 bg-ivy text-ecru rounded shadow hover:bg-rust hover:text-ecru transition font-semibold";
-    btn.addEventListener("click", () => {
-      showCategory(cat);
-    });
+    btn.className = "px-4 py-2 bg-ivy text-ecru font-semibold rounded hover:bg-rust transition";
+    btn.addEventListener("click", () => filterMenu(cat));
     menuNav.appendChild(btn);
   });
 
-  // Show the first category by default
-  showCategory(categories[0]);
+  const menuContainer = document.getElementById("food-menu-container");
 
-  function showCategory(category) {
+  function renderMenu(items) {
     menuContainer.innerHTML = "";
-    items
-      .filter(item => item.Category === category)
-      .forEach(item => {
-        const card = document.createElement("div");
-        card.className = "flex flex-col sm:flex-row items-center bg-ecru/90 rounded-2xl shadow-lg p-6 border-l-4 border-gold";
+    items.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "flex flex-col sm:flex-row items-center gap-6 p-4 bg-ecru/90 rounded-xl shadow-lg border-l-4 border-gold";
 
-        // Image
-        if (item.Image && item.Image.trim() !== "") {
-          const img = document.createElement("img");
-          img.src = item.Image;
-          img.alt = item.Name;
-          img.className = "h-24 w-24 sm:h-32 sm:w-32 rounded-lg mr-6 mb-4 sm:mb-0 object-cover";
-          card.appendChild(img);
-        }
+      // Image if exists
+      if (item.Image) {
+        const img = document.createElement("img");
+        img.src = item.Image;
+        img.alt = item.Name;
+        img.className = "w-32 h-32 object-cover rounded-lg";
+        div.appendChild(img);
+      }
 
-        // Info
-        const info = document.createElement("div");
-        info.className = "flex flex-col";
+      const info = document.createElement("div");
+      info.className = "flex-1 flex flex-col items-start";
 
-        const name = document.createElement("h3");
-        name.textContent = item.Name;
-        name.className = "text-xl sm:text-2xl font-bold text-ivy mb-2";
-        info.appendChild(name);
+      const name = document.createElement("h3");
+      name.textContent = item.Name;
+      name.className = "text-2xl font-bold text-dark mb-1";
+      info.appendChild(name);
 
-        const desc = document.createElement("p");
-        desc.textContent = item.Description;
-        desc.className = "text-slate mb-2";
-        info.appendChild(desc);
+      const desc = document.createElement("p");
+      desc.textContent = item.Description;
+      desc.className = "text-dark/80 mb-2";
+      info.appendChild(desc);
 
-        const price = document.createElement("span");
-        price.textContent = `$${item.Price}`;
-        price.className = "text-rust font-semibold";
-        info.appendChild(price);
+      const price = document.createElement("p");
+      price.textContent = item.Price;
+      price.className = "text-dark font-semibold mb-4";
+      info.appendChild(price);
 
-        card.appendChild(info);
-        menuContainer.appendChild(card);
-      });
+      // Order button
+      const orderBtn = document.createElement("a");
+      orderBtn.href = "about.html"; // placeholder
+      orderBtn.textContent = "Order Here";
+      orderBtn.className = "px-6 py-2 bg-rust text-ecru font-semibold rounded-lg shadow-md hover:bg-gold hover:text-dark transition";
+      info.appendChild(orderBtn);
+
+      div.appendChild(info);
+      menuContainer.appendChild(div);
+    });
   }
+
+  function filterMenu(category) {
+    const filtered = menuData.filter(item => item.Category === category);
+    renderMenu(filtered);
+  }
+
+  // Show all items initially
+  renderMenu(menuData);
 });
