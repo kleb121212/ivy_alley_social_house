@@ -6,10 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ivy Alley Social House</title>
 
-  <!-- Google Fonts: Figtree -->
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <!-- Preconnect for faster font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&family=Josefin+Sans:wght@400;600;700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -35,7 +41,42 @@
   <style>
     body {
       min-height: 100vh;
+      background-color: #f0eadc;
+      background-image:
+        url('https://www.transparenttextures.com/patterns/linen.png'),
+        url('assets/pillars.png');
+      background-repeat: repeat, no-repeat;
+      background-position: top left, center;
+      background-size: cover;
+      /* adjust size of overlay */
+      background-attachment: fixed, fixed;
     }
+  /* Mobile: simulate fixed pillars with a pseudo-element */
+  @media (max-width: 768px) {
+    body {
+      /* only keep the linen texture on body */
+      background-image: url('https://www.transparenttextures.com/patterns/linen.png');
+      background-repeat: repeat;
+      background-position: top left;
+      background-size: cover;
+      background-attachment: scroll;
+      position: relative; /* ensure pseudo-element is positioned correctly */
+    }
+
+    body::before {
+      content: "";
+      position: fixed;        /* keeps it in place while scrolling */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('assets/pillars_narrow.png');
+      background-repeat: no-repeat;
+      background-size: 95%;   /* smaller on mobile */
+      background-position: top center;
+      z-index: -1;            /* behind content */
+    }
+  }
 
     a {
       transition: color 0.2s ease;
@@ -44,69 +85,37 @@
     a:hover {
       color: #c39a4d;
     }
-
-    /* linen background (bottom layer) */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url('https://www.transparenttextures.com/patterns/linen.png');
-      opacity: 0.05;
-      pointer-events: none;
-      z-index: 0;
-      /* set to 0 so it's visible */
-    }
-
-    /* faded background image (top layer) */
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: url('assets/Ivy_Alley_Line_Black.png') no-repeat center center;
-      background-size: 100%;
-      opacity: 0.04;
-      pointer-events: none;
-      z-index: 1;
-      /* slightly above linen */
-    }
-
-    .logo-img {
-      height: 50px;
-      /* adjust as needed */
-      width: auto;
-    }
   </style>
 </head>
 
-<body class="flex flex-col min-h-screen text-dark font-figtree relative z-10 bg-ecru">
+<body class="flex flex-col min-h-screen text-dark font-figtree relative z-10">
 
+  <!-- Navbar -->
+  <nav class="bg-dark/90 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b-2 border-gold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+      <a href="index.html">
+        <img src="assets/Ivy Alley_Line_Ecru.png" alt="Ivy Alley Logo" class="h-16 w-auto">
+      </a>
+      <ul class="flex gap-4 sm:gap-6 text-sm sm:text-base md:text-lg font-semibold font-figtree text-gold uppercase">
+        <li><a href="food-menu.html" class="hover:text-rust">Food</a></li>
+        <li><a href="beer-menu.html" class="hover:text-rust">Drinks</a></li>
+        <li><a href="events.html" class="hover:text-rust">Events</a></li>
+        <li><a href="bowling.html" class="hover:text-rust">Duckpin</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
   <main class="flex-grow">
-
-    <!-- Navbar -->
-    <nav class="bg-dark/90 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b-2 border-gold">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-wrap justify-between items-center">
-        <!-- Logo replaces text -->
-        <a href="index.html" class="logo-link">
-          <img src="assets/Ivy_Alley_Horizontal_Ecru.png" alt="Ivy Alley Logo" class="logo-img">
-        </a>
-        <ul
-          class="flex flex-wrap gap-4 sm:space-x-6 text-sm sm:text-base md:text-lg font-semibold font-figtree text-ecru mt-2 sm:mt-0 uppercase">
-          <!-- Removed Home link -->
-          <li><a href="food-menu.html" class="hover:text-rust">Food</a></li>
-          <li><a href="beer-menu.html" class="hover:text-rust">Drinks</a></li>
-          <li><a href="events.html" class="hover:text-rust">Events</a></li>
-          <li><a href="bowling.html" class="hover:text-rust">Duckpin</a></li>
-        </ul>
-      </div>
-    </nav>
-
-
-    <!-- Hero Section -->
     <section class="w-full relative py-36 flex flex-col items-center justify-center text-center bg-ecru/95 shadow-xl">
-      <h1 class="text-6xl font-black font-title text-ivy mb-6 tracking-[0.1em] uppercase">
-        Ivy Alley Social House
-      </h1>
-      <p class="text-2xl italic mb-8 text-slate max-w-2xl font-figtree">
+      <!-- Replace the H1 with a responsive logo -->
+      <img 
+        src="assets/Ivy Alley_Horizontal_Charred.png" 
+        alt="Ivy Alley Social House Logo" 
+        class="w-4/5 max-w-5xl h-auto mb-6"
+      />
+
+      <p class="text-2xl italic mb-8 text-ivy max-w-2xl font-figtree">
         A cozy craft social house blending modern vibes with an industrial edge
       </p>
       <a href="about.html" target="_blank"
@@ -114,16 +123,16 @@
         About Us
       </a>
 
-      <!-- Hours Section -->
+      <!-- Hours -->
       <section
         class="max-w-6xl mx-auto my-16 px-6 py-12 bg-dark/85 rounded-2xl shadow-lg border-l-4 border-gold text-center">
         <h2 class="text-4xl font-semibold font-figtree text-gold mb-6 tracking-[0.05em] uppercase">Hours</h2>
         <p class="text-xl text-ecru font-figtree">Opening late 2025 – stay tuned!</p>
       </section>
 
-      <!-- Contact Section -->
+      <!-- Contact -->
       <section
-        class="max-w-6xl mx-auto mb-16 px-6 py-12 bg-ecru/90 rounded-2xl shadow-lg border-r-4 border-slate text-dark">
+        class="max-w-6xl mx-auto mb-16 px-6 py-12 bg-ecru/90 rounded-2xl shadow-lg border-r-4 border-ivy text-dark">
         <h2 class="text-4xl font-semibold font-figtree text-ivy mb-6 tracking-[0.05em] uppercase">Contact</h2>
         <div class="space-y-4 text-lg text-ivy font-figtree">
           <p><strong>Phone:</strong> (xxx) xxx-xxxx</p>
@@ -150,15 +159,14 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer
     class="relative bg-ecru border-t border-slate w-full text-center text-ecru tracking-wider uppercase py-6 font-figtree">
-    <!-- Art Deco accent spanning full width -->
     <div class="absolute top-0 left-0 w-full h-16 overflow-hidden">
       <svg class="w-full h-full" viewBox="0 0 100 20" preserveAspectRatio="none">
         <polygon points="0,20 100,20 100,0 0,10" fill="#465f36" />
       </svg>
     </div>
-
     <p class="relative z-10 text-sm">&copy; 2025 Ivy Alley Social House | All Rights Reserved</p>
   </footer>
 
