@@ -1,73 +1,46 @@
-// js/beer-menu.js
-document.addEventListener("DOMContentLoaded", () => {
-  const menuContainer = document.getElementById("drink-menu-container");
-  const menuNav = document.getElementById("drink-menu-nav");
+const drinkData = [
+  {Name:"IPA", Description:"Hoppy beer", Price:"6", Image:"assets/ipa.jpg", Category:"Beer"},
+  {Name:"Stout", Description:"Rich & dark", Price:"7", Image:"assets/stout.jpg", Category:"Beer"},
+  {Name:"Mojito", Description:"Rum & mint", Price:"8", Image:"assets/mojito.jpg", Category:"Cocktail"},
+];
 
-  // === Embedded drink data ===
-  const drinks = [
-    { Name: "IPA", Description: "Hoppy and bitter, 6.5% ABV.", Price: "7.00", Image: "assets/ipa.jpg", Category: "Beers" },
-    { Name: "Lager", Description: "Smooth and crisp, 5% ABV.", Price: "6.50", Image: "", Category: "Beers" },
-    { Name: "Stout", Description: "Dark, rich, and creamy, 6% ABV.", Price: "7.50", Image: "assets/stout.jpg", Category: "Beers" },
-    { Name: "Red Wine", Description: "Full-bodied cabernet.", Price: "9.00", Image: "", Category: "Wines" },
-    { Name: "White Wine", Description: "Crisp and refreshing chardonnay.", Price: "8.50", Image: "", Category: "Wines" },
-    { Name: "Cocktail: Old Fashioned", Description: "Classic bourbon cocktail with bitters.", Price: "10.00", Image: "", Category: "Cocktails" },
-    // Add all other drinks here
-  ];
+const container = document.getElementById('drink-menu-container');
+const nav = document.getElementById('drink-menu-nav');
 
-  // === Generate category buttons ===
-  const categories = [...new Set(drinks.map(drink => drink.Category))];
+const categories = [...new Set(drinkData.map(d => d.Category))];
 
-  categories.forEach(cat => {
-    const btn = document.createElement("button");
-    btn.textContent = cat;
-    btn.className = "px-4 py-2 bg-ivy text-ecru rounded shadow hover:bg-rust hover:text-ecru transition font-semibold";
-    btn.addEventListener("click", () => {
-      showCategory(cat);
-    });
-    menuNav.appendChild(btn);
-  });
-
-  // Show first category by default
-  showCategory(categories[0]);
-
-  function showCategory(category) {
-    menuContainer.innerHTML = "";
-    drinks
-      .filter(drink => drink.Category === category)
-      .forEach(drink => {
-        const card = document.createElement("div");
-        card.className = "flex flex-col sm:flex-row items-center bg-ecru/90 rounded-2xl shadow-lg p-6 border-l-4 border-gold";
-
-        // Image
-        if (drink.Image && drink.Image.trim() !== "") {
-          const img = document.createElement("img");
-          img.src = drink.Image;
-          img.alt = drink.Name;
-          img.className = "h-24 w-24 sm:h-32 sm:w-32 rounded-lg mr-6 mb-4 sm:mb-0 object-cover";
-          card.appendChild(img);
-        }
-
-        // Info
-        const info = document.createElement("div");
-        info.className = "flex flex-col";
-
-        const name = document.createElement("h3");
-        name.textContent = drink.Name;
-        name.className = "text-xl sm:text-2xl font-bold text-ivy mb-2";
-        info.appendChild(name);
-
-        const desc = document.createElement("p");
-        desc.textContent = drink.Description;
-        desc.className = "text-slate mb-2";
-        info.appendChild(desc);
-
-        const price = document.createElement("span");
-        price.textContent = `$${drink.Price}`;
-        price.className = "text-rust font-semibold";
-        info.appendChild(price);
-
-        card.appendChild(info);
-        menuContainer.appendChild(card);
-      });
-  }
+categories.forEach(cat => {
+  const btn = document.createElement('button');
+  btn.textContent = cat;
+  btn.className = 'px-4 py-2 bg-ivy text-ecru rounded hover:bg-rust transition font-semibold';
+  btn.addEventListener('click', () => showCategory(cat));
+  nav.appendChild(btn);
 });
+
+container.innerHTML = `<p class="text-center text-lg text-dark/70">Please select a category above.</p>`;
+
+function showCategory(category) {
+  container.innerHTML = '';
+  const items = drinkData.filter(d => d.Category === category);
+  items.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'flex flex-col sm:flex-row items-center gap-4 bg-ecru/90 p-4 rounded-xl shadow-md';
+    
+    if(item.Image) {
+      const img = document.createElement('img');
+      img.src = item.Image;
+      img.alt = item.Name;
+      img.className = 'w-32 h-32 object-cover rounded-lg';
+      div.appendChild(img);
+    }
+
+    const info = document.createElement('div');
+    info.className = 'flex flex-col gap-1';
+    info.innerHTML = `
+      <h3 class="text-xl font-semibold text-ivy">${item.Name} - $${item.Price}</h3>
+      <p class="text-dark">${item.Description}</p>
+    `;
+    div.appendChild(info);
+    container.appendChild(div);
+  });
+}
