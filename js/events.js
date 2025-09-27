@@ -1,91 +1,69 @@
-fetch('data/events.csv')
-    .then(res => res.text())
-    .then(csv => {
-        const parsed = Papa.parse(csv, { header: true }).data;
-        const container = document.getElementById('events-container');
+document.addEventListener("DOMContentLoaded", () => {
+  const eventsContainer = document.getElementById("events-container");
+  const eventsNav = document.getElementById("events-nav");
 
-        if (!container) {
-            console.error("Missing #events-container");
-            return;
-        }
+  const events = [
+    { Name: "Live Jazz Night", Description: "Smooth jazz every Friday.", Date: "2025-10-10", Image: "assets/jazz.jpg" },
+    { Name: "Trivia Night", Description: "Test your wits every Tuesday.", Date: "2025-10-17", Image: "" },
+    { Name: "Open Mic", Description: "Local talent showcase.", Date: "2025-11-05", Image: "assets/openmic.jpg" },
+    { Name: "Comedy Night", Description: "Laughs with local comedians.", Date: "2025-11-20", Image: "" },
+  ];
 
-        // Parse dates and group by Month/Year
-        const eventsByMonth = {};
+  // Generate month-year buttons
+  const months = [...new Set(events.map(e => {
+    const d = new Date(e.Date);
+    return d.toLocaleString('default', { month: 'long', year: 'numeric' });
+  }))];
 
-        parsed.forEach(event => {
-            if (!event.Name || !event.Date) return;
+  months.forEach(m => {
+    const btn = document.createElement("button");
+    btn.textContent = m;
+    btn.className = "px-4 py-2 bg-ivy text-ecru rounded shadow hover:bg-rust hover:text-ecru transition font-semibold";
+    btn.addEventListener("click", () => showMonth(m));
+    eventsNav.appendChild(btn);
+  });
 
-            const date = new Date(event.Date);
-            if (isNaN(date)) return;
+  showMonth(months[0]); // default
 
-            const monthKey = date.toLocaleString('default', { month: 'long', year: 'numeric' });
+  function showMonth(month) {
+    eventsContainer.innerHTML = "";
+    events.filter(e => {
+      const d = new Date(e.Date);
+      const me = d.toLocaleString('default', { month: 'long', year: 'numeric' });
+      return me === month;
+    }).forEach(ev => {
+      const card = document.createElement("div");
+      card.className = "flex flex-col sm:flex-row items-center bg-ecru/90 rounded-2xl shadow-lg p-6 border-l-4 border-gold";
 
-            if (!eventsByMonth[monthKey]) eventsByMonth[monthKey] = [];
-            eventsByMonth[monthKey].push({ ...event, _parsedDate: date });
-        });
+      if (ev.Image && ev.Image.trim() !== "") {
+        const img = document.createElement("img");
+        img.src = ev.Image;
+        img.alt = ev.Name;
+        img.className = "h-24 w-24 sm:h-32 sm:w-32 rounded-lg mr-6 mb-4 sm:mb-0 object-cover";
+        card.appendChild(img);
+      }
 
-        const sortedMonths = Object.keys(eventsByMonth).sort((a, b) => {
-            const aDate = new Date(eventsByMonth[a][0]._parsedDate);
-            const bDate = new Date(eventsByMonth[b][0]._parsedDate);
-            return aDate - bDate;
-        });
+      const info = document.createElement("div");
+      info.className = "flex flex-col";
 
-        sortedMonths.forEach(month => {
-            const monthSection = document.createElement('section');
+      const name = document.createElement("h3");
+      name.textContent = ev.Name;
+      name.className = "text-xl sm:text-2xl font-bold text-ivy mb-2";
+      info.appendChild(name);
 
-            const heading = document.createElement('h2');
-            heading.textContent = month;
-            heading.className = "text-2xl font-bold border-b pb-2 mb-4";
-            monthSection.appendChild(heading);
+      const desc = document.createElement("p");
+      desc.textContent = ev.Description;
+      desc.className = "text-slate mb-2";
+      info.appendChild(desc);
 
-            const list = document.createElement('div');
-            list.className = "space-y-4";
+      const date = document.createElement("span");
+      const d = new Date(ev.Date);
+      date.textContent = d.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
+      date.className = "text-rust font-semibold";
+      info.appendChild(date);
 
-            eventsByMonth[month]
-                .sort((a, b) => a._parsedDate - b._parsedDate)
-                .forEach(event => {
-                    const card = document.createElement('div');
-                    card.className = "bg-white shadow p-4 rounded";
-
-                    const title = document.createElement('h3');
-                    title.textContent = event.Name;
-                    title.className = "text-lg font-semibold";
-                    card.appendChild(title);
-
-                    // Optional image
-                    if (event.Image && event.Image.trim() !== '') {
-                        const img = document.createElement('img');
-                        img.src = `images/${event.Image.trim()}`;
-                        img.alt = event.Name;
-                        img.className = "w-full max-w-md mx-auto mb-3 rounded";
-                        card.appendChild(img);
-                    }
-
-                    const date = document.createElement('p');
-                    date.textContent = new Date(event.Date).toLocaleDateString(undefined, {
-                        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
-                    });
-                    date.className = "text-sm text-gray-600";
-                    card.appendChild(date);
-
-                    if (event.Description) {
-                        const desc = document.createElement('p');
-                        desc.textContent = event.Description;
-                        desc.className = "mt-1 text-gray-700 text-sm";
-                        card.appendChild(desc);
-                    }
-
-                    if (event.Time) {
-                        const time = document.createElement('p');
-                        time.textContent = `Time: ${event.Time}`;
-                        time.className = "text-sm text-gray-700";
-                        card.appendChild(time);
-                    }
-
-                    list.appendChild(card);
-                });
-
-            monthSection.appendChild(list);
-            container.appendChild(monthSection);
-        });
+      card.appendChild(info);
+      eventsContainer.appendChild(card);
     });
+  }
+});

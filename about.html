@@ -2,17 +2,147 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coming Soon | About Us</title>
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&family=Josefin+Sans:wght@400;600;700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivy: "#465f36",
+            ecru: "#f0eadc",
+            dark: "#2f2f2f",
+            rust: "#9a3c00",
+            slate: "#4f697a",
+            gold: "#c39a4d",
+          },
+          fontFamily: {
+            figtree: ['Figtree', 'sans-serif'],
+            title: ['"Josefin Sans"', 'sans-serif']
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: #f0eadc;
+      background-image:
+        url('https://www.transparenttextures.com/patterns/linen.png'),
+        url('assets/pillars.png');
+      background-repeat: repeat, no-repeat;
+      background-position: top left, center;
+      background-size: cover;
+      background-attachment: fixed, fixed;
+      color: #2f2f2f;
+      font-family: 'Figtree', sans-serif;
+    }
+
+    a {
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #c39a4d;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        background-image: url('https://www.transparenttextures.com/patterns/linen.png');
+        background-repeat: repeat;
+        background-position: top left;
+        background-size: cover;
+        background-attachment: scroll;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('assets/pillars_narrow.png');
+        background-repeat: no-repeat;
+        background-size: 95%;
+        background-position: top center;
+        z-index: -1;
+      }
+    }
+  </style>
 </head>
 
-<body class="bg-gray-50 text-gray-900 flex items-center justify-center min-h-screen">
-    <div class="text-center">
-        <h1 class="text-4xl font-bold mb-4">About Us</h1>
-        <p class="text-lg text-gray-700">More info Coming Soon!</p>
-    </div>
-</body>
+<body class="flex flex-col min-h-screen relative z-10">
 
+  <!-- Navbar -->
+  <nav class="bg-dark/90 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b-2 border-gold">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+
+      <!-- Logo -->
+      <a href="index.html">
+        <img src="assets/Ivy Alley_Line_Ecru.png" alt="Ivy Alley Logo" class="h-12 sm:h-16 w-auto">
+      </a>
+
+      <!-- Links with icons -->
+      <ul class="flex gap-2 sm:gap-6 text-sm sm:text-base md:text-lg font-semibold font-figtree text-gold uppercase">
+        <li>
+          <a href="food-menu.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
+            <span>Food</span>
+            <img src="assets/pizza.svg" alt="Pizza icon" class="h-6 w-6 sm:h-10 sm:w-10">
+          </a>
+        </li>
+        <li>
+          <a href="beer-menu.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
+            <span>Drinks</span>
+            <img src="assets/beer.svg" alt="Beer icon" class="h-6 w-6 sm:h-10 sm:w-10">
+          </a>
+        </li>
+        <li>
+          <a href="events.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
+            <span>Events</span>
+            <img src="assets/calendar.svg" alt="Calendar icon" class="h-6 w-6 sm:h-10 sm:w-10">
+          </a>
+        </li>
+        <li>
+          <a href="bowling.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
+            <span>Duckpin</span>
+            <img src="assets/bowling_ball.svg" alt="Bowling icon" class="h-6 w-6 sm:h-10 sm:w-10">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow flex items-center justify-center text-center">
+    <h1 class="text-4xl sm:text-6xl font-bold text-gold">Coming Soon!</h1>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative bg-ecru border-t border-dark w-full text-center text-ecru tracking-wider uppercase py-6 font-figtree mt-12">
+    <div class="absolute top-0 left-0 w-full h-16 overflow-hidden">
+      <svg class="w-full h-full" viewBox="0 0 100 20" preserveAspectRatio="none">
+        <polygon points="0,20 100,20 100,0 0,10" fill="#465f36" />
+      </svg>
+    </div>
+    <p class="relative z-10 text-sm">&copy; 2025 Ivy Alley Social House | All Rights Reserved</p>
+  </footer>
+
+</body>
 </html>
