@@ -51,15 +51,30 @@
       /* adjust size of overlay */
       background-attachment: fixed, fixed;
     }
-    /* Mobile override */
+  /* Mobile: simulate fixed pillars with a pseudo-element */
   @media (max-width: 768px) {
     body {
-      background-image:
-        url('https://www.transparenttextures.com/patterns/linen.png'),
-        url('assets/pillars_narrow.png'); /* swap file here */
-      background-attachment: scroll, scroll;
-      background-size: cover, 95%;
-      background-position: top left, top;
+      /* only keep the linen texture on body */
+      background-image: url('https://www.transparenttextures.com/patterns/linen.png');
+      background-repeat: repeat;
+      background-position: top left;
+      background-size: cover;
+      background-attachment: scroll;
+      position: relative; /* ensure pseudo-element is positioned correctly */
+    }
+
+    body::before {
+      content: "";
+      position: fixed;        /* keeps it in place while scrolling */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('assets/pillars_narrow.png');
+      background-repeat: no-repeat;
+      background-size: 95%;   /* smaller on mobile */
+      background-position: top center;
+      z-index: -1;            /* behind content */
     }
   }
 
