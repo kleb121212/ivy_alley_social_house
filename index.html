@@ -51,6 +51,14 @@
       /* adjust size of overlay */
       background-attachment: fixed, fixed;
     }
+    /* Mobile override */
+    @media (max-width: 768px) {
+      body {
+        background-attachment: scroll, scroll; /* let it scroll instead of fixed */
+        background-size: cover, cover;         /* make pillars actually show up */
+        background-position: top left, top;    /* push pillars into view */
+      }
+    }
 
     a {
       transition: color 0.2s ease;
@@ -79,23 +87,23 @@
     </div>
   </nav>
 
-<!-- Hero -->
-<main class="flex-grow">
-  <section class="w-full relative py-36 flex flex-col items-center justify-center text-center bg-ecru/95 shadow-xl">
-    <!-- Replace the H1 with a responsive logo -->
-    <img 
-      src="assets/Ivy Alley_Horizontal_Charred.png" 
-      alt="Ivy Alley Social House Logo" 
-      class="w-4/5 max-w-5xl h-auto mb-6"
-    />
+  <!-- Hero -->
+  <main class="flex-grow">
+    <section class="w-full relative py-36 flex flex-col items-center justify-center text-center bg-ecru/95 shadow-xl">
+      <!-- Replace the H1 with a responsive logo -->
+      <img 
+        src="assets/Ivy Alley_Horizontal_Charred.png" 
+        alt="Ivy Alley Social House Logo" 
+        class="w-4/5 max-w-5xl h-auto mb-6"
+      />
 
-    <p class="text-2xl italic mb-8 text-ivy max-w-2xl font-figtree">
-      A cozy craft social house blending modern vibes with an industrial edge
-    </p>
-    <a href="about.html" target="_blank"
-      class="px-10 py-4 bg-rust text-ecru font-semibold font-figtree rounded-lg shadow-md hover:bg-gold hover:text-dark transition uppercase tracking-wide">
-      About Us
-    </a>
+      <p class="text-2xl italic mb-8 text-ivy max-w-2xl font-figtree">
+        A cozy craft social house blending modern vibes with an industrial edge
+      </p>
+      <a href="about.html" target="_blank"
+        class="px-10 py-4 bg-rust text-ecru font-semibold font-figtree rounded-lg shadow-md hover:bg-gold hover:text-dark transition uppercase tracking-wide">
+        About Us
+      </a>
 
       <!-- Hours -->
       <section
