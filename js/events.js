@@ -3,10 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const eventsNav = document.getElementById("events-nav");
 
   const events = [
-    { Name: "Live Jazz Night", Description: "Smooth jazz every Friday.", Date: "2025-10-10", Image: "assets/jazz.jpg" },
-    { Name: "Trivia Night", Description: "Test your wits every Tuesday.", Date: "2025-10-17", Image: "" },
-    { Name: "Open Mic", Description: "Local talent showcase.", Date: "2025-11-05", Image: "assets/openmic.jpg" },
-    { Name: "Comedy Night", Description: "Laughs with local comedians.", Date: "2025-11-20", Image: "" },
+    { Name: "Coming Soon!", Description: "Please check back as we will be updating this page with our weekly events soon!", Date: "2025-10-01"},
+    { Name: "Coming Soon!", Description: "Please check back as we will be updating this page with our weekly events soon!", Date: "2025-11-01"}
   ];
 
   // Generate month-year buttons
