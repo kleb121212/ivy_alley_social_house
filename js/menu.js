@@ -39,7 +39,7 @@ const menuData = [
   {Name:"Brewer’s Choice", Description:"BBQ Sauce Base, House Cheese Blend, Chicken Breast, Raw Red Onions, & Sliced Jalapenos.", Price:"12 | $18", Category:"House Pizzas"},
   {Name:"Kid", Description:"Base Price listed, +$2 for each topping added", Price:"8", Category:"Build your Own Pizzas"},
   {Name:"Regular", Description:"Base Price listed, +$2 for each topping added", Price:"12", Category:"Build your Own Pizzas"},
-  {Name:"Kids Pizza	", Description:"Create your own! There are loads of options up there. Get Creative!", Price:"See CYO Section", Category:"Kid's Menu"},
+  {Name:"Kids Pizza	", Description:"Base Price listed, +$2 for each topping added", Price:"8", Category:"Kid's Menu"},
   {Name:"Mac & Cheese", Description:"It’s like the store stuff, just homemade.", Price:"7", Category:"Kid's Menu"},
   {Name:"Hot Dog", Description:"Plain Hot Dog with Fries, Chips, or Carrots", Price:"6", Category:"Kid's Menu"},
   {Name:"Pepsi Products", Description:"", Price:"2", Category:"Beverages"},
