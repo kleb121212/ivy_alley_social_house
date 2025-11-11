@@ -98,29 +98,41 @@
   </footer>
 
   <script>
-    async function loadGallery() {
-      try {
-        const response = await fetch('gall/');
-        const text = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(text, 'text/html');
-        let files = [...doc.querySelectorAll('a')]
-          .map(a => a.href)
-          .filter(href => href.match(/\.(jpg|jpeg|png|webp)$/i));
-        if (files.length % 2 !== 0) files.pop(); // drop final if odd
+  async function loadGallery() {
+    try {
+      // 🔧 Define your image paths manually
+      const imageUrls = [
+        '/gall/one.png',
+        '/gall/two.png',
+        '/gall/three.png',
+        '/gall/four.png',
+        '/gall/five.png',
+        '/gall/six.png',
+        '/gall/seven.png',
+        '/gall/eight.png',
+        '/gall/nine.png',
+        '/gall/ten.png'
 
-        const grid = document.getElementById('galleryGrid');
-        files.forEach(file => {
-          const img = document.createElement('img');
-          img.src = file;
-          img.className = 'w-full aspect-square object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300';
-          grid.appendChild(img);
-        });
-      } catch (e) {
-        console.error('Error loading gallery:', e);
-      }
+        // add more as needed
+      ];
+
+      const gallery = document.getElementById('gallery');
+      gallery.innerHTML = ''; // clear old content
+
+      imageUrls.forEach(url => {
+        const img = document.createElement('img');
+        img.src = url;
+        img.alt = url.split('/').pop();
+        img.className = 'gallery-image';
+        gallery.appendChild(img);
+      });
+    } catch (err) {
+      console.error('Error loading gallery:', err);
     }
-    loadGallery();
+  }
+
+  document.addEventListener('DOMContentLoaded', loadGallery);
   </script>
+
 </body>
 </html>
