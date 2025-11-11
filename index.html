@@ -1,24 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ivy Alley Social House</title>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/beer.svg">
-
-  <!-- Preconnect for faster font loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&family=Josefin+Sans:wght@400;600;700;900&display=swap"
     rel="stylesheet">
-
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -39,7 +31,6 @@
       }
     }
   </script>
-
   <style>
     body {
       min-height: 100vh;
@@ -50,35 +41,32 @@
       background-repeat: repeat, no-repeat;
       background-position: top left, center;
       background-size: cover;
-      /* adjust size of overlay */
       background-attachment: fixed, fixed;
     }
-  /* Mobile: simulate fixed pillars with a pseudo-element */
-  @media (max-width: 768px) {
-    body {
-      /* only keep the linen texture on body */
-      background-image: url('https://www.transparenttextures.com/patterns/linen.png');
-      background-repeat: repeat;
-      background-position: top left;
-      background-size: cover;
-      background-attachment: scroll;
-      position: relative; /* ensure pseudo-element is positioned correctly */
-    }
 
-    body::before {
-      content: "";
-      position: fixed;        /* keeps it in place while scrolling */
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('assets/pillars_narrow.png');
-      background-repeat: no-repeat;
-      background-size: 95%;   /* smaller on mobile */
-      background-position: top center;
-      z-index: -1;            /* behind content */
+    @media (max-width: 768px) {
+      body {
+        background-image: url('https://www.transparenttextures.com/patterns/linen.png');
+        background-repeat: repeat;
+        background-size: cover;
+        background-attachment: scroll;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('assets/pillars_narrow.png');
+        background-repeat: no-repeat;
+        background-size: 95%;
+        background-position: top center;
+        z-index: -1;
+      }
     }
-  }
 
     a {
       transition: color 0.2s ease;
@@ -92,121 +80,70 @@
 
 <body class="flex flex-col min-h-screen text-dark font-figtree relative z-10">
 
-<!-- Navbar -->
+  <!-- Navbar -->
   <nav class="bg-dark/90 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b-2 border-gold">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-
-      <!-- Logo -->
       <a href="index.html">
         <img src="assets/Ivy Alley_Line_Ecru.png" alt="Ivy Alley Logo" class="h-12 sm:h-16 w-auto">
       </a>
-
-      <!-- Links with icons -->
       <ul class="flex gap-2 sm:gap-6 text-sm sm:text-base md:text-lg font-semibold font-figtree text-gold uppercase">
-        <li>
-          <a href="food-menu.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
-            <span>Food</span>
-            <img src="assets/pizza.svg" alt="Pizza icon" class="h-6 w-6 sm:h-10 sm:w-10">
-          </a>
-        </li>
-        <li>
-          <a href="beer-menu.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
-            <span>Drinks</span>
-            <img src="assets/beer.svg" alt="Beer icon" class="h-6 w-6 sm:h-10 sm:w-10">
-          </a>
-        </li>
-        <li>
-          <a href="events.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
-            <span>Events</span>
-            <img src="assets/calendar.svg" alt="Calendar icon" class="h-6 w-6 sm:h-10 sm:w-10">
-          </a>
-        </li>
-        <li>
-          <a href="bowling.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
-            <span>Duckpin</span>
-            <img src="assets/bowling_ball.svg" alt="Bowling icon" class="h-6 w-6 sm:h-10 sm:w-10">
-          </a>
-        </li>
+        <li><a href="food-menu.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1"><span>Food</span><img src="assets/pizza.svg" alt="Pizza icon" class="h-6 w-6 sm:h-10 sm:w-10"></a></li>
+        <li><a href="beer-menu.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1"><span>Drinks</span><img src="assets/beer.svg" alt="Beer icon" class="h-6 w-6 sm:h-10 sm:w-10"></a></li>
+        <li><a href="events.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1"><span>Events</span><img src="assets/calendar.svg" alt="Calendar icon" class="h-6 w-6 sm:h-10 sm:w-10"></a></li>
+        <li><a href="bowling.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1"><span>Duckpin</span><img src="assets/bowling_ball.svg" alt="Bowling icon" class="h-6 w-6 sm:h-10 sm:w-10"></a></li>
       </ul>
-
     </div>
   </nav>
-
-
 
   <!-- Hero -->
   <main class="flex-grow">
     <section class="w-full relative py-36 flex flex-col items-center justify-center text-center bg-ecru/95 shadow-xl">
-      <!-- Replace the H1 with a responsive logo -->
-      <img 
-        src="assets/Ivy Alley_Horizontal_Charred.png" 
-        alt="Ivy Alley Social House Logo" 
-        class="w-4/5 max-w-5xl h-auto mb-6"
-      />
-
+      <img src="assets/Ivy Alley_Horizontal_Charred.png" alt="Ivy Alley Social House Logo" class="w-4/5 max-w-5xl h-auto mb-6" />
       <p class="text-2xl italic mb-8 text-ivy max-w-2xl font-figtree">
         Step right into South Bend's lively hangout spot, where duckpin bowling and cold beer come together to create the perfect social destination for making memories with friends and family.
       </p>
-      <a href="reservations.html"
-        class="px-10 py-4 bg-rust text-ecru font-semibold font-figtree rounded-lg shadow-md hover:bg-gold hover:text-dark transition uppercase tracking-wide">
-        Reservations
-      </a>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="reservations.html" class="px-10 py-4 bg-rust text-ecru font-semibold font-figtree rounded-lg shadow-md hover:bg-gold hover:text-dark transition uppercase tracking-wide">
+          Reservations
+        </a>
+        <a href="gallery.html" class="px-10 py-4 bg-rust text-ecru font-semibold font-figtree rounded-lg shadow-md hover:bg-gold hover:text-dark transition uppercase tracking-wide">
+          Gallery
+        </a>
+      </div>
 
-      <!-- Hours -->
-      <section
-        class="max-w-6xl mx-auto my-16 px-6 py-12 bg-dark/85 rounded-2xl shadow-lg border-l-4 border-gold text-center">
+      <section class="max-w-6xl mx-auto my-16 px-6 py-12 bg-dark/85 rounded-2xl shadow-lg border-l-4 border-gold text-center">
         <h2 class="text-4xl font-semibold font-figtree text-gold mb-6 tracking-[0.05em] uppercase">Hours</h2>
         <p class="text-xl text-ecru font-figtree">Opening late 2025 – stay tuned!</p>
       </section>
 
-      <!-- Contact -->
-      <section
-        class="max-w-6xl mx-auto mb-16 px-6 py-12 bg-ecru/90 rounded-2xl shadow-lg border-r-4 border-ivy text-dark">
+      <section class="max-w-6xl mx-auto mb-16 px-6 py-12 bg-ecru/90 rounded-2xl shadow-lg border-r-4 border-ivy text-dark">
         <h2 class="text-4xl font-semibold font-figtree text-ivy mb-6 tracking-[0.05em] uppercase">Contact</h2>
         <div class="space-y-4 text-lg text-ivy font-figtree">
-          <!--<p><strong>Phone:</strong> (xxx) xxx-xxxx</p>-->
           <p><strong>About Us:</strong>
-            <a href="about.html" target="_blank" class="text-rust hover:text-gold underline">
-              Learn more about our story
-            </a>
-          </p>
-          <p><strong>Gallery:</strong>
-            <a href="gallery.html" target="_blank" class="text-rust hover:text-gold underline">
-              Check out our process!
-            </a>
+            <a href="about.html" target="_blank" class="text-rust hover:text-gold underline">Learn more about our story</a>
           </p>
           <p><strong>Email:</strong>
-            <a href="mailto:klein.nathan.97@gmail.com"
-              class="text-rust hover:text-gold underline">
+            <a href="mailto:klein.nathan.97@gmail.com" class="text-rust hover:text-gold underline">
               klein.nathan.97@gmail.com
             </a>
           </p>
           <p><strong>Address:</strong>
-            <a href="https://www.google.com/maps/place/Ivy+Alley+Social+House" target="_blank"
-              class="text-rust hover:text-gold underline">
+            <a href="https://www.google.com/maps/place/Ivy+Alley+Social+House" target="_blank" class="text-rust hover:text-gold underline">
               321 W. Wayne St. South Bend, IN
             </a>
           </p>
           <p><strong>Facebook:</strong>
-            <a href="https://www.facebook.com/share/12JWpbcXHDR/" target="_blank"
-              class="text-rust hover:text-gold underline">
-              Visit our page
-            </a>
+            <a href="https://www.facebook.com/share/12JWpbcXHDR/" target="_blank" class="text-rust hover:text-gold underline">Visit our page</a>
           </p>
           <p><strong>Instagram:</strong>
-            <a href="https://www.instagram.com/ivy_alley_social_house?igsh=MXkxMHVxaWgybDk0bg==" target="_blank"
-              class="text-rust hover:text-gold underline">
-              Visit our page
-            </a>
+            <a href="https://www.instagram.com/ivy_alley_social_house?igsh=MXkxMHVxaWgybDk0bg==" target="_blank" class="text-rust hover:text-gold underline">Visit our page</a>
           </p>
         </div>
       </section>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer
-    class="relative bg-ecru border-t border-dark w-full text-center text-ecru tracking-wider uppercase py-6 font-figtree">
+  <footer class="relative bg-ecru border-t border-dark w-full text-center text-ecru tracking-wider uppercase py-6 font-figtree">
     <div class="absolute top-0 left-0 w-full h-16 overflow-hidden">
       <svg class="w-full h-full" viewBox="0 0 100 20" preserveAspectRatio="none">
         <polygon points="0,20 100,20 100,0 0,10" fill="#465f36" />
@@ -216,5 +153,4 @@
   </footer>
 
 </body>
-
 </html>
