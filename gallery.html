@@ -98,40 +98,40 @@
   </footer>
 
   <script>
-  async function loadGallery() {
-    try {
-      // 🔧 Define your image paths manually
-      const imageUrls = [
-        '/gall/one.png',
-        '/gall/two.png',
-        '/gall/three.png',
-        '/gall/four.png',
-        '/gall/five.png',
-        '/gall/six.png',
-        '/gall/seven.png',
-        '/gall/eight.png',
-        '/gall/nine.png',
-        '/gall/ten.png'
+    async function loadGallery() {
+      try {
+        // 🔧 Define your image paths manually
+        const imageUrls = [
+          '/gall/one.png',
+          '/gall/two.png',
+          '/gall/three.png',
+          '/gall/four.png',
+          '/gall/five.png',
+          '/gall/six.png',
+          '/gall/seven.png',
+          '/gall/eight.png',
+          '/gall/nine.png',
+          '/gall/ten.png'
 
-        // add more as needed
-      ];
+          // add more as needed
+        ];
 
-      const gallery = document.getElementById('gallery');
-      gallery.innerHTML = ''; // clear old content
+        const galleryGrid = document.getElementById('galleryGrid');
+        galleryGrid.innerHTML = ''; // clear old content
 
-      imageUrls.forEach(url => {
-        const img = document.createElement('img');
-        img.src = url;
-        img.alt = url.split('/').pop();
-        img.className = 'gallery-image';
-        gallery.appendChild(img);
-      });
-    } catch (err) {
-      console.error('Error loading gallery:', err);
+        imageUrls.forEach(url => {
+          const img = document.createElement('img');
+          img.src = url;
+          img.alt = url.split('/').pop();
+          img.className = 'gallery-image';
+          galleryGrid.appendChild(img);
+        });
+      } catch (err) {
+        console.error('Error loading gallery:', err);
+      }
     }
-  }
 
-  document.addEventListener('DOMContentLoaded', loadGallery);
+    document.addEventListener('DOMContentLoaded', loadGallery);
   </script>
 
 </body>
