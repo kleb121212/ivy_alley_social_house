@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Food Menu | Ivy Alley Social House</title>
+  <title>Coming Soon | About Us</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/beer.svg">
@@ -64,7 +64,6 @@
       color: #c39a4d;
     }
 
-    /* Mobile: simulate fixed pillars */
     @media (max-width: 768px) {
       body {
         background-image: url('https://www.transparenttextures.com/patterns/linen.png');
@@ -90,9 +89,6 @@
       }
     }
   </style>
-
-  <!-- PapaParse for CSV -->
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
 
 <body class="flex flex-col min-h-screen relative z-10">
@@ -100,6 +96,7 @@
   <!-- Navbar -->
   <nav class="bg-dark/90 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b-2 border-gold">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+
       <!-- Logo -->
       <a href="index.html">
         <img src="assets/Ivy Alley_Line_Ecru.png" alt="Ivy Alley Logo" class="h-12 sm:h-16 w-auto">
@@ -126,7 +123,7 @@
           </a>
         </li>
         <li>
-          <a href="about.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
+          <a href="bowling.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
             <span>Duckpin</span>
             <img src="assets/bowling_ball.svg" alt="Bowling icon" class="h-6 w-6 sm:h-10 sm:w-10">
           </a>
@@ -135,36 +132,93 @@
     </div>
   </nav>
 
+  <!-- Main Content -->
+<!-- Main Content -->
+<!-- Main Content -->
+<main class="flex-grow flex items-center justify-center px-6 py-24">
+  <div class="bg-ecru/90 backdrop-blur-sm rounded-2xl shadow-xl max-w-6xl w-full px-8 sm:px-12 py-16 space-y-16">
 
+    <!-- Intro -->
+    <section class="space-y-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold text-ivy font-title">
+        About Ivy Alley Social House
+      </h1>
+      <p class="text-lg sm:text-xl text-dark">
+        Welcome to Ivy Alley Social House — where everyone’s invited and there’s something for every kind of fun.
+        From state-of-the-art duckpin bowling to live music and family-friendly entertainment, we’re a place to gather,
+        relax, and make memories.
+      </p>
+      <p class="text-lg sm:text-xl text-dark">
+        Our full kitchen specializes in high-temp, stone-oven pizza, but we also serve a fresh selection of sandwiches,
+        soups, and salads for every taste. Settle in with a pint from our on-site microbrewery or sip an expertly crafted
+        cocktail from our full bar — whatever you’re craving, we’ve got you covered.
+      </p>
+    </section>
 
-  <!-- Menu Navigation -->
-  <div id="food-menu-nav" class="max-w-6xl mx-auto mt-8 mb-8 px-4 sm:px-0 flex flex-wrap gap-4 justify-center"></div>
+    <!-- Duckpin Bowling -->
+    <section class="grid md:grid-cols-2 gap-12 items-center">
+      <img
+        src="assets/bowling.jpg"
+        alt="Duckpin bowling lanes"
+        class="w-full rounded-xl shadow-lg"
+      />
+      <div class="space-y-4">
+        <h2 class="text-3xl font-bold text-ivy font-title">
+          Eight Lanes of Fun
+        </h2>
+        <p class="text-lg text-dark">
+          With eight duckpin lanes, there’s plenty of room for everyone — though reservations are always welcome if you
+          want to guarantee your spot.
+        </p>
+        <p class="text-lg text-dark">
+          Duckpin bowling features shorter lanes and smaller balls, making it easy for kids to join the fun while still
+          challenging even the most competitive adults. And yes, it's true: getting a strike is tougher than it looks.
+          Pro tip: roll slower than you think!
+        </p>
+      </div>
+    </section>
 
-  <!-- Menu Items -->
-  <main class="flex-grow max-w-6xl mx-auto px-4 sm:px-0 space-y-12">
-    <div id="food-menu-container" class="flex flex-col space-y-12"></div>
-  </main>
+    <!-- Pizza -->
+    <section class="space-y-4 text-center">
+      <h2 class="text-3xl font-bold text-ivy font-title">
+        Pizza Fired at 750°F
+      </h2>
+      <p class="text-lg text-dark">
+        Our roaring 750°F oven turns out irresistibly crisp, thin-crust pizzas loaded with flavor. We start with handmade,
+        cold-fermented dough, add your choice of house-made sauces, and top it with fresh mozzarella, provolone, and your
+        favorite toppings.
+      </p>
+      <p class="text-lg text-dark">
+        Mix, match, and create your perfect pie.
+      </p>
+    </section>
 
-  <!-- Order Now Button -->
-  <div class="max-w-6xl mx-auto px-4 sm:px-0 mt-12 flex justify-center">
-    <a href="about.html"
-       class="bg-rust hover:bg-gold text-ecru font-bold uppercase tracking-wider px-8 py-4 rounded-lg shadow-lg transition-colors duration-300">
-      Order Now
-    </a>
+    <!-- Brewery -->
+    <section class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-4">
+        <h2 class="text-3xl font-bold text-ivy font-title">
+          Craft Beer & Creative Cocktails
+        </h2>
+        <p class="text-lg text-dark">
+          At the heart of our bar is our microbrewery, where we transform grain, hops, and water into a variety of
+          distinctive beers.
+        </p>
+        <p class="text-lg text-dark">
+          Prefer something else? We proudly feature local distilleries and wineries alongside the classics you know and
+          love. Choose from margaritas on tap, a freshly made Old Fashioned, or a non-alcoholic cocktail inspired by our
+          friends at FunktioN/al in Mishawaka.
+        </p>
+      </div>
+      <img
+        src="assets/brewery.jpg"
+        alt="On-site brewery"
+        class="w-full rounded-xl shadow-lg"
+      />
+    </section>
+
   </div>
+</main>
 
-  <!-- Dietary Disclaimer -->
-  <section class="max-w-6xl mx-auto my-12 px-6 py-8 bg-ecru/90 rounded-2xl shadow-lg border-l-4 border-gold text-dark font-figtree">
-    <p class="mb-4">
-      Please let us know if you have any dietary restrictions or preferences. We will do our absolute best to accommodate. If you call ahead, we will happily work to try to find a solution for your dietary needs.
-    </p>
-    <p class="mb-2"><strong>Vgt</strong> - Vegetarian</p>
-    <p class="mb-2"><strong>GF*</strong> – Gluten Friendly (Cross contamination may occur)</p>
-    <p class="mb-4">Gluten Friendly bread and Crust available in almost all cases!</p>
-    <p class="mb-0"><em>** Contains, or may contain, raw or undercooked ingredients.</em></p>
-    <p class="mb-2">Disclaimer: Menu items may contain common allergens such as gluten, milk (dairy), eggs, soy, tree nuts (nuts), crustacean shellfish, wheat, peanuts, soybeans (soy), and sesame . These common allergens can be found throughout our kitchen and cross-contamination may occur.</p>
-    <p class="mb-2">Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions.</p>
-  </section>
 
   <!-- Footer -->
   <footer class="relative bg-ecru border-t border-dark w-full text-center text-ecru tracking-wider uppercase py-6 font-figtree mt-12">
@@ -176,9 +230,5 @@
     <p class="relative z-10 text-sm">&copy; 2025 Ivy Alley Social House | All Rights Reserved</p>
   </footer>
 
-  <!-- Menu Script -->
-  <script src="js/menu.js"></script>
-
 </body>
-
 </html>
