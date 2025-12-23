@@ -133,13 +133,60 @@
     </div>
   </nav>
 
-  <!-- Menu Navigation -->
-  <div id="drink-menu-nav" class="max-w-6xl mx-auto mt-8 mb-8 px-4 sm:px-0 flex flex-wrap gap-4 justify-center"></div>
+<!-- Main Content -->
+<main class="flex-grow flex items-center justify-center px-6 py-24">
+  <div class="bg-ecru/90 backdrop-blur-sm rounded-2xl shadow-xl max-w-5xl w-full px-8 sm:px-12 py-16 space-y-10 text-center">
 
-  <!-- Menu Items -->
-  <main class="flex-grow max-w-6xl mx-auto px-4 sm:px-0 space-y-12">
-    <div id="drink-menu-container" class="flex flex-col space-y-12"></div>
-  </main>
+    <h1 class="text-4xl sm:text-5xl font-title font-bold text-ivy uppercase tracking-wide">
+      Drink Menu
+    </h1>
+
+    <!-- Toggle Buttons -->
+    <div class="flex flex-wrap justify-center gap-4">
+      <button
+        onclick="showMenu('beer')"
+        id="btn-beer"
+        class="menu-btn bg-ivy text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
+        Beer
+      </button>
+
+      <button
+        onclick="showMenu('cocktail')"
+        id="btn-cocktail"
+        class="menu-btn bg-ivy/80 text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
+        Cocktails
+      </button>
+
+      <button
+        onclick="showMenu('wine')"
+        id="btn-wine"
+        class="menu-btn bg-ivy/80 text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
+        Wine
+      </button>
+    </div>
+
+    <!-- PDF Viewer -->
+    <div class="w-full max-w-4xl mx-auto bg-dark/5 rounded-xl shadow-inner overflow-hidden">
+      <iframe
+        id="menu-frame"
+        src="assets/beer_menu.pdf#toolbar=0&navpanes=0&scrollbar=1"
+        class="w-full h-[550px]"
+      ></iframe>
+    </div>
+
+    <!-- Download -->
+    <a
+      id="menu-download"
+      href="assets/beer_menu.pdf"
+      target="_blank"
+      class="inline-block text-sm uppercase tracking-wide font-semibold text-ivy hover:text-gold transition"
+    >
+      Download PDF
+    </a>
+
+  </div>
+</main>
+
 
   <!-- Footer -->
   <footer class="relative bg-ecru border-t border-dark w-full text-center text-ecru tracking-wider uppercase py-6 font-figtree mt-12">
@@ -152,7 +199,38 @@
   </footer>
 
     <!-- Menu Script -->
-  <script src="js/beer-menu.js"></script>
+  <script>
+  function showMenu(type) {
+    const frame = document.getElementById('menu-frame');
+    const download = document.getElementById('menu-download');
+
+    const buttons = {
+      beer: document.getElementById('btn-beer'),
+      cocktail: document.getElementById('btn-cocktail'),
+      wine: document.getElementById('btn-wine')
+    };
+
+    // Reset button styles
+    Object.values(buttons).forEach(btn => {
+      btn.classList.remove('bg-ivy');
+      btn.classList.add('bg-ivy/80');
+    });
+
+    // Activate selected button
+    buttons[type].classList.remove('bg-ivy/80');
+    buttons[type].classList.add('bg-ivy');
+
+    // Set PDF source
+    let pdf = '';
+    if (type === 'beer') pdf = 'assets/beer_menu.pdf';
+    if (type === 'cocktail') pdf = 'assets/cocktail_menu.pdf';
+    if (type === 'wine') pdf = 'assets/wine_menu.pdf';
+
+    frame.src = pdf + '#toolbar=0&navpanes=0&scrollbar=1';
+    download.href = pdf;
+  }
+</script>
+
 
 </body>
 </html>

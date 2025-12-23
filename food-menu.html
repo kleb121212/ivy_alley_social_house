@@ -135,36 +135,50 @@
     </div>
   </nav>
 
+<!-- Main Content -->
+<main class="flex-grow flex items-center justify-center px-6 py-24">
+  <div class="bg-ecru/90 backdrop-blur-sm rounded-2xl shadow-xl max-w-5xl w-full px-8 sm:px-12 py-16 space-y-12 text-center">
 
+    <h1 class="text-4xl sm:text-5xl font-title font-bold text-ivy uppercase tracking-wide">
+      Food Menu
+    </h1>
 
-  <!-- Menu Navigation -->
-  <div id="food-menu-nav" class="max-w-6xl mx-auto mt-8 mb-8 px-4 sm:px-0 flex flex-wrap gap-4 justify-center"></div>
+    <!-- Order Now Button -->
+    <div>
+      <a href="about.html"
+         class="inline-block bg-rust hover:bg-gold text-ecru hover:text-dark font-bold uppercase tracking-wider px-10 py-5 rounded-lg shadow-lg transition-colors duration-300">
+        Order Now
+      </a>
+    </div>
 
-  <!-- Menu Items -->
-  <main class="flex-grow max-w-6xl mx-auto px-4 sm:px-0 space-y-12">
-    <div id="food-menu-container" class="flex flex-col space-y-12"></div>
-  </main>
+<!-- PDF Menu -->
+<div class="space-y-6">
+  <p class="text-lg text-dark">
+    View our current food menu below.
+  </p>
 
-  <!-- Order Now Button -->
-  <div class="max-w-6xl mx-auto px-4 sm:px-0 mt-12 flex justify-center">
-    <a href="about.html"
-       class="bg-rust hover:bg-gold text-ecru font-bold uppercase tracking-wider px-8 py-4 rounded-lg shadow-lg transition-colors duration-300">
-      Order Now
-    </a>
+  <!-- Embedded PDF -->
+  <div class="w-full max-w-4xl mx-auto bg-dark/5 rounded-xl shadow-inner overflow-hidden">
+    <iframe
+      src="assets/food_menu.pdf#toolbar=0&navpanes=0&scrollbar=1"
+      class="w-full h-[550px]"
+    ></iframe>
   </div>
 
-  <!-- Dietary Disclaimer -->
-  <section class="max-w-6xl mx-auto my-12 px-6 py-8 bg-ecru/90 rounded-2xl shadow-lg border-l-4 border-gold text-dark font-figtree">
-    <p class="mb-4">
-      Please let us know if you have any dietary restrictions or preferences. We will do our absolute best to accommodate. If you call ahead, we will happily work to try to find a solution for your dietary needs.
-    </p>
-    <p class="mb-2"><strong>Vgt</strong> - Vegetarian</p>
-    <p class="mb-2"><strong>GF*</strong> – Gluten Friendly (Cross contamination may occur)</p>
-    <p class="mb-4">Gluten Friendly bread and Crust available in almost all cases!</p>
-    <p class="mb-0"><em>** Contains, or may contain, raw or undercooked ingredients.</em></p>
-    <p class="mb-2">Disclaimer: Menu items may contain common allergens such as gluten, milk (dairy), eggs, soy, tree nuts (nuts), crustacean shellfish, wheat, peanuts, soybeans (soy), and sesame . These common allergens can be found throughout our kitchen and cross-contamination may occur.</p>
-    <p class="mb-2">Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions.</p>
-  </section>
+  <!-- Optional download -->
+  <a
+    href="assets/food_menu.pdf"
+    target="_blank"
+    class="inline-block text-sm uppercase tracking-wide font-semibold text-ivy hover:text-gold transition"
+  >
+    Download PDF
+  </a>
+</div>
+    </div>
+
+  </div>
+</main>
+
 
   <!-- Footer -->
   <footer class="relative bg-ecru border-t border-dark w-full text-center text-ecru tracking-wider uppercase py-6 font-figtree mt-12">
