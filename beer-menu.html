@@ -165,13 +165,12 @@
       </button>
     </div>
 
-    <!-- PDF Viewer -->
-    <div class="w-full max-w-4xl mx-auto bg-dark/5 rounded-xl shadow-inner overflow-hidden">
-      <iframe
-        id="menu-frame"
-        src="assets/beer_menu.pdf#toolbar=0&navpanes=0&scrollbar=1"
-        class="w-full h-[550px]"
-      ></iframe>
+    <!-- Menu Viewer -->
+    <div id="menu-container" class="w-full max-w-4xl mx-auto bg-dark/5 rounded-xl shadow-inner overflow-hidden">
+      <div id="menu-content" class="flex flex-col gap-4">
+        <img id="primary-menu-img" src="assets/beer_menu.jpg" alt="Menu" class="w-full h-auto block">
+        <img id="secondary-menu-img" src="assets/wine_menu_2.jpg" alt="Menu Page 2" class="w-full h-auto hidden">
+      </div>
     </div>
 
     <!-- Download -->
@@ -181,7 +180,7 @@
       target="_blank"
       class="inline-block text-sm uppercase tracking-wide font-semibold text-ivy hover:text-gold transition"
     >
-      Download PDF
+      Download Menu
     </a>
 
   </div>
@@ -200,36 +199,46 @@
 
     <!-- Menu Script -->
   <script>
-  function showMenu(type) {
-    const frame = document.getElementById('menu-frame');
-    const download = document.getElementById('menu-download');
+    function showMenu(type) {
+      const primaryImg = document.getElementById('primary-menu-img');
+      const secondaryImg = document.getElementById('secondary-menu-img');
+      const download = document.getElementById('menu-download');
 
-    const buttons = {
-      beer: document.getElementById('btn-beer'),
-      cocktail: document.getElementById('btn-cocktail'),
-      wine: document.getElementById('btn-wine')
-    };
+      const buttons = {
+        beer: document.getElementById('btn-beer'),
+        cocktail: document.getElementById('btn-cocktail'),
+        wine: document.getElementById('btn-wine')
+      };
 
-    // Reset button styles
-    Object.values(buttons).forEach(btn => {
-      btn.classList.remove('bg-ivy');
-      btn.classList.add('bg-ivy/80');
-    });
+      // Reset button styles
+      Object.values(buttons).forEach(btn => {
+        btn.classList.remove('bg-ivy');
+        btn.classList.add('bg-ivy/80');
+      });
 
-    // Activate selected button
-    buttons[type].classList.remove('bg-ivy/80');
-    buttons[type].classList.add('bg-ivy');
+      // Activate selected button
+      buttons[type].classList.remove('bg-ivy/80');
+      buttons[type].classList.add('bg-ivy');
 
-    // Set PDF source
-    let pdf = '';
-    if (type === 'beer') pdf = 'assets/beer_menu.pdf';
-    if (type === 'cocktail') pdf = 'assets/cocktail_menu.pdf';
-    if (type === 'wine') pdf = 'assets/wine_menu.pdf';
-
-    frame.src = pdf + '#toolbar=0&navpanes=0&scrollbar=1';
-    download.href = pdf;
-  }
-</script>
+      // Logic for Image Swapping
+      if (type === 'beer') {
+        primaryImg.src = 'assets/beer_menu.jpg';
+        secondaryImg.classList.add('hidden');
+        download.href = 'assets/beer_menu.pdf';
+      } 
+      else if (type === 'cocktail') {
+        primaryImg.src = 'assets/cocktail_menu.jpg';
+        secondaryImg.classList.add('hidden');
+        download.href = 'assets/cocktail_menu.pdf';
+      } 
+      else if (type === 'wine') {
+        primaryImg.src = 'assets/wine_menu_1.jpg';
+        secondaryImg.src = 'assets/wine_menu_2.jpg';
+        secondaryImg.classList.remove('hidden'); // Show the second page
+        download.href = 'assets/wine_menu.pdf';
+      }
+    }
+  </script>
 
 
 </body>

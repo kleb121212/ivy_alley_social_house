@@ -137,44 +137,29 @@
 
 <!-- Main Content -->
 <main class="flex-grow flex items-center justify-center px-6 py-24">
-  <div class="bg-ecru/90 backdrop-blur-sm rounded-2xl shadow-xl max-w-5xl w-full px-8 sm:px-12 py-16 space-y-12 text-center">
+  <div class="bg-ecru/90 backdrop-blur-sm rounded-2xl shadow-xl max-w-5xl w-full px-8 sm:px-12 py-16 space-y-10 text-center">
 
     <h1 class="text-4xl sm:text-5xl font-title font-bold text-ivy uppercase tracking-wide">
       Food Menu
     </h1>
 
-    <!-- Order Now Button -->
-    <div>
-      <a href="about.html"
-         class="inline-block bg-rust hover:bg-gold text-ecru hover:text-dark font-bold uppercase tracking-wider px-10 py-5 rounded-lg shadow-lg transition-colors duration-300">
-        Order Now
-      </a>
+    <p class="text-lg text-dark">
+      View our current food menu below.
+    </p>
+
+    <div id="food-menu-container" class="w-full max-w-4xl mx-auto bg-dark/5 rounded-xl shadow-inner overflow-hidden">
+      <div class="flex flex-col gap-1"> <img src="assets/food_menu_1.jpg" alt="Food Menu Page 1" class="w-full h-auto block">
+        <img src="assets/food_menu_2.jpg" alt="Food Menu Page 2" class="w-full h-auto block" onerror="this.style.display='none'">
+      </div>
     </div>
 
-<!-- PDF Menu -->
-<div class="space-y-6">
-  <p class="text-lg text-dark">
-    View our current food menu below.
-  </p>
-
-  <!-- Embedded PDF -->
-  <div class="w-full max-w-4xl mx-auto bg-dark/5 rounded-xl shadow-inner overflow-hidden">
-    <iframe
-      src="assets/food_menu.pdf#toolbar=0&navpanes=0&scrollbar=1"
-      class="w-full h-[550px]"
-    ></iframe>
-  </div>
-
-  <!-- Optional download -->
-  <a
-    href="assets/food_menu.pdf"
-    target="_blank"
-    class="inline-block text-sm uppercase tracking-wide font-semibold text-ivy hover:text-gold transition"
-  >
-    Download PDF
-  </a>
-</div>
-    </div>
+    <a
+      href="assets/food_menu.pdf"
+      target="_blank"
+      class="inline-block text-sm uppercase tracking-wide font-semibold text-ivy hover:text-gold transition mt-6"
+    >
+      Download Menu
+    </a>
 
   </div>
 </main>
