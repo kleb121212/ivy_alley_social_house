@@ -163,6 +163,13 @@
         class="menu-btn bg-ivy/80 text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
         Wine
       </button>
+
+      <button
+        onclick="showMenu('liquor')"
+        id="btn-liquor"
+        class="menu-btn bg-ivy/80 text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
+        Liquor
+      </button>
     </div>
 
     <!-- Menu Viewer -->
@@ -207,7 +214,8 @@
       const buttons = {
         beer: document.getElementById('btn-beer'),
         cocktail: document.getElementById('btn-cocktail'),
-        wine: document.getElementById('btn-wine')
+        wine: document.getElementById('btn-wine'),
+        liquor: document.getElementById('btn-liquor')
       };
 
       // Reset button styles
@@ -233,9 +241,17 @@
       } 
       else if (type === 'wine') {
         primaryImg.src = 'assets/wine_menu_1.jpg';
-        secondaryImg.src = 'assets/wine_menu_2.jpg';
-        secondaryImg.classList.remove('hidden'); // Show the second page
+        secondaryImg.classList.add('hidden'); // Hide the second page
+        //secondaryImg.src = 'assets/wine_menu_2.jpg';
+        //secondaryImg.classList.remove('hidden'); // Show the second page
         download.href = 'assets/wine_menu.pdf';
+      }
+      else if (type === 'liquor') {
+        primaryImg.src = 'assets/liquor_menu_1.jpg';
+        //secondaryImg.classList.add('hidden'); // Hide the second page
+        secondaryImg.src = 'assets/liquor_menu_2.jpg';
+        secondaryImg.classList.remove('hidden'); // Show the second page
+        download.href = 'assets/liquor_menu.pdf';
       }
     }
   </script>
