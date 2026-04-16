@@ -144,10 +144,17 @@
     <!-- Toggle Buttons -->
     <div class="flex flex-wrap justify-center gap-4">
       <button
+        onclick="showMenu('Tap_List')"
+        id="btn-tap_list"
+        class="menu-btn bg-ivy text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
+        Tap List
+      </button>
+
+      <button
         onclick="showMenu('beer')"
         id="btn-beer"
-        class="menu-btn bg-ivy text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
-        Beer
+        class="menu-btn bg-ivy/80 text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
+        Cans
       </button>
 
       <button
@@ -175,7 +182,7 @@
     <!-- Menu Viewer -->
     <div id="menu-container" class="w-full max-w-4xl mx-auto bg-dark/5 rounded-xl shadow-inner overflow-hidden">
       <div id="menu-content" class="flex flex-col gap-4">
-        <img id="primary-menu-img" src="assets/beer_menu.jpg" alt="Menu" class="w-full h-auto block">
+        <img id="primary-menu-img" src="assets/Draft_List.jpg" alt="Menu" class="w-full h-auto block">
         <img id="secondary-menu-img" src="assets/wine_menu_2.jpg" alt="Menu Page 2" class="w-full h-auto hidden">
       </div>
     </div>
@@ -183,7 +190,7 @@
     <!-- Download -->
     <a
       id="menu-download"
-      href="assets/beer_menu.pdf"
+      href="assets/Draft_List.pdf"
       target="_blank"
       class="inline-block text-sm uppercase tracking-wide font-semibold text-ivy hover:text-gold transition"
     >
@@ -212,6 +219,7 @@
       const download = document.getElementById('menu-download');
 
       const buttons = {
+        Tap_List: document.getElementById('btn-tap_list'),
         beer: document.getElementById('btn-beer'),
         cocktail: document.getElementById('btn-cocktail'),
         wine: document.getElementById('btn-wine'),
@@ -230,7 +238,12 @@
 
       
       // Logic for Image Swapping
-      if (type === 'beer') {
+      if (type === 'Tap_List') {
+        primaryImg.src = 'assets/Draft_List.jpg';
+        secondaryImg.classList.add('hidden');
+        download.href = 'assets/draft_List.pdf';
+      } 
+      else if (type === 'beer') {
         primaryImg.src = 'assets/beer_menu.jpg';
         secondaryImg.classList.add('hidden');
         download.href = 'assets/beer_menu.pdf';
