@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catering & Private Parties | Ivy Alley Social House</title>
+
+  <title>Catering & Private Parties in South Bend | Ivy Alley Social House</title>
+
+  <meta name="description" content="Host your next event at Ivy Alley Social House in downtown South Bend. Catering, private parties, corporate gatherings, and celebrations with great food, craft drinks, and duckpin bowling." />
 
   <link rel="icon" type="image/svg+xml" href="assets/beer.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&family=Josefin+Sans:wght@400;600;700;900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&family=Josefin+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -32,6 +33,27 @@
       }
     }
   </script>
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Ivy Alley Social House",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "321 W. Wayne St.",
+      "addressLocality": "South Bend",
+      "addressRegion": "IN",
+      "postalCode": "46601"
+    },
+    "telephone": "(574) 318-9593",
+    "url": "https://ivyalleysocial.com",
+    "servesCuisine": "American",
+    "priceRange": "$$",
+    "description": "Catering, private parties, and event hosting in downtown South Bend with food, drinks, and duckpin bowling."
+  }
+  </script>
 </head>
 
 <body class="flex flex-col min-h-screen bg-ecru text-dark font-figtree">
@@ -43,11 +65,11 @@
         <img src="assets/Ivy Alley_Line_Ecru.png" alt="Ivy Alley Logo" class="h-12 sm:h-16 w-auto">
       </a>
       <ul class="flex gap-2 sm:gap-6 text-sm sm:text-base md:text-lg font-semibold text-gold uppercase">
-        <li><a href="food-menu.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Food</span><img src="assets/pizza.svg" class="h-6 w-6 sm:h-10 sm:w-10"></a></li>
-        <li><a href="beer-menu.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Drinks</span><img src="assets/beer.svg" class="h-6 w-6 sm:h-10 sm:w-10"></a></li>
-        <li><a href="events.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Events</span><img src="assets/calendar.svg" class="h-6 w-6 sm:h-10 sm:w-10"></a></li>
-        <li><a href="catering.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Catering</span><img src="assets/Catering_Icon.png" class="h-6 w-6 sm:h-10 sm:w-10"></a></li>
-        <li><a href="about.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Duckpin</span><img src="assets/bowling_ball.svg" class="h-6 w-6 sm:h-10 sm:w-10"></a></li>
+        <li><a href="food-menu.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Food</span><img src="assets/pizza.svg" class="h-6 w-6 sm:h-10 sm:w-10" alt="Food Menu"></a></li>
+        <li><a href="beer-menu.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Drinks</span><img src="assets/beer.svg" class="h-6 w-6 sm:h-10 sm:w-10" alt="Drink Menu"></a></li>
+        <li><a href="events.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Events</span><img src="assets/calendar.svg" class="h-6 w-6 sm:h-10 sm:w-10" alt="Events"></a></li>
+        <li><a href="catering.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Catering</span><img src="assets/catering.svg" class="h-6 w-6 sm:h-10 sm:w-10" alt="Catering"></a></li>
+        <li><a href="about.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Duckpin</span><img src="assets/bowling_ball.svg" class="h-6 w-6 sm:h-10 sm:w-10" alt="Duckpin Bowling"></a></li>
       </ul>
     </div>
   </nav>
@@ -55,40 +77,68 @@
   <!-- MAIN CONTENT -->
   <main class="flex-grow px-6 py-20">
     <section class="max-w-6xl mx-auto bg-ecru/95 rounded-2xl shadow-xl px-8 sm:px-12 py-16 border-l-4 border-gold">
+
+      <!-- H1 -->
       <h1 class="text-4xl sm:text-5xl font-title text-ivy mb-6 uppercase tracking-wide text-center">
         Catering & Private Parties
       </h1>
+
+      <!-- Intro Paragraph -->
       <p class="text-lg text-dark/90 max-w-3xl mx-auto text-center mb-10">
-        Whether you’re planning a birthday celebration, corporate event, or family gathering, Ivy Alley Social House offers a unique space filled with great food, craft drinks, and duckpin bowling fun. Let us handle the details while you enjoy the party.
+        Ivy Alley Social House offers catering and private event hosting in the heart of downtown South Bend. Whether you're planning a birthday celebration, corporate gathering, team outing, or family event, our space blends great food, craft drinks, and duckpin bowling for a memorable experience.
       </p>
 
+      <!-- WHY HOST HERE -->
+      <h2 class="text-3xl font-title text-ivy mt-12 mb-4 text-center uppercase tracking-wide">
+        Why Host Your Event at Ivy Alley
+      </h2>
+      <p class="text-lg text-dark/90 max-w-3xl mx-auto text-center mb-12">
+        Located on West Wayne Street, Ivy Alley provides a warm, social atmosphere perfect for groups of all sizes. Our team handles the details so you can enjoy your event — from food and drinks to lane reservations and setup.
+      </p>
+
+      <!-- TWO COLUMN SECTION -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+
+        <!-- Catering Options -->
         <div class="bg-dark/85 text-ecru rounded-xl shadow-lg px-8 py-10 border-l-4 border-gold">
-          <h2 class="text-2xl font-title text-gold mb-4 uppercase tracking-wide">Our Catering Options</h2>
+          <h2 class="text-2xl font-title text-gold mb-4 uppercase tracking-wide">Catering Options</h2>
           <ul class="space-y-3 text-lg">
-            <li>• Full-service catering for private events</li>
-            <li>• Custom menus featuring Ivy Alley favorites</li>
-            <li>• Dietary accommodations available</li>
+            <li>• Customizable catering menus featuring Ivy Alley favorites</li>
+            <li>• Beer, wine, and craft cocktail selections</li>
+            <li>• Buffet-style or passed appetizer service</li>
+            <li>• Dietary accommodations available upon request</li>
+            <li>• Ideal for corporate events, celebrations, and group outings</li>
           </ul>
+          <p class="mt-6 text-ecru/90">
+            Explore our <a href="food-menu.html" class="text-gold underline hover:text-rust">Food Menu</a> and <a href="beer-menu.html" class="text-gold underline hover:text-rust">Drink Menu</a> for inspiration.
+          </p>
         </div>
 
+        <!-- Amenities -->
         <div class="bg-ecru rounded-xl shadow-lg px-8 py-10 border-r-4 border-ivy">
-          <h2 class="text-2xl font-title text-ivy mb-4 uppercase tracking-wide">Private Party Packages</h2>
+          <h2 class="text-2xl font-title text-ivy mb-4 uppercase tracking-wide">Private Party Amenities</h2>
           <ul class="space-y-3 text-lg text-dark/90">
-            <li>• Exclusive use of our duckpin lanes</li>
+            <li>• Access to our duckpin bowling lanes</li>
             <li>• Dedicated event coordinator</li>
-            <li>• Custom décor and music options</li>
+            <li>• Curated music and atmosphere</li>
             <li>• Flexible scheduling for daytime or evening events</li>
+            <li>• Comfortable, social layout perfect for groups</li>
           </ul>
+          <p class="mt-6 text-dark/80">
+            Learn more about our space on the <a href="about.html" class="text-rust underline hover:text-gold">About Page</a>.
+          </p>
         </div>
+
       </div>
 
-      <div class="text-center mt-12">
-        <a href="mailto:contact@ivyalleysocial.com"
+      <!-- CTA -->
+      <div class="text-center mt-16">
+        <a href="mailto:events@ivyalleysocial.com"
            class="inline-block bg-rust text-ecru font-semibold py-4 px-8 rounded-lg shadow-md hover:bg-gold hover:text-dark transition uppercase tracking-wide">
-          Contact Us to Book
+          Contact Us to Book Your Event
         </a>
       </div>
+
     </section>
   </main>
 
