@@ -3,22 +3,15 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Beer & Drinks | Ivy Alley Social House</title>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/beer.svg">
 
-  <!-- Preconnect for fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&family=Josefin+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&family=Josefin+Sans:wght@400;600;700;900&display=swap"
-    rel="stylesheet">
-
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -42,6 +35,11 @@
   </script>
 
   <style>
+    /* ⭐ FINAL FIX: Force consistent base scale across pages */
+    html {
+      font-size: 100% !important;
+    }
+
     body {
       min-height: 100vh;
       background-color: #f0eadc;
@@ -49,7 +47,7 @@
         url('https://www.transparenttextures.com/patterns/linen.png'),
         url('assets/pillars.png');
       background-repeat: repeat, no-repeat;
-      background-position: top left, center;
+      background-position: top left, top 80px center; /* ⭐ Move pillars down */
       background-size: cover;
       background-attachment: fixed, fixed;
       color: #2f2f2f;
@@ -64,7 +62,6 @@
       color: #c39a4d;
     }
 
-    /* Mobile: simulate fixed pillars */
     @media (max-width: 768px) {
       body {
         background-image: url('https://www.transparenttextures.com/patterns/linen.png');
@@ -98,110 +95,90 @@
   <nav class="bg-dark/90 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b-2 border-gold">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
 
-      <!-- Logo -->
       <a href="index.html">
         <img src="assets/Ivy Alley_Line_Ecru.png" alt="Ivy Alley Logo" class="h-12 sm:h-16 w-auto">
       </a>
 
-      <!-- Links with icons -->
       <ul class="flex gap-2 sm:gap-6 text-sm sm:text-base md:text-lg font-semibold font-figtree text-gold uppercase">
         <li>
           <a href="food-menu.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
             <span>Food</span>
-            <img src="assets/pizza.svg" alt="Pizza icon" class="h-6 w-6 sm:h-10 sm:w-10">
+            <img src="assets/pizza.svg" class="h-6 w-6 sm:h-10 sm:w-10">
           </a>
         </li>
         <li>
           <a href="beer-menu.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
             <span>Drinks</span>
-            <img src="assets/beer.svg" alt="Beer icon" class="h-6 w-6 sm:h-10 sm:w-10">
+            <img src="assets/beer.svg" class="h-6 w-6 sm:h-10 sm:w-10">
           </a>
         </li>
         <li>
           <a href="events.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
             <span>Events</span>
-            <img src="assets/calendar.svg" alt="Calendar icon" class="h-6 w-6 sm:h-10 sm:w-10">
+            <img src="assets/calendar.svg" class="h-6 w-6 sm:h-10 sm:w-10">
           </a>
         </li>
+                <li><a href="catering.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Catering</span><img src="assets/Catering_Icon.png" class="h-6 w-6 sm:h-10 sm:w-10"></a></li>
         <li>
           <a href="about.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
             <span>Duckpin</span>
-            <img src="assets/bowling_ball.svg" alt="Bowling icon" class="h-6 w-6 sm:h-10 sm:w-10">
+            <img src="assets/bowling_ball.svg" class="h-6 w-6 sm:h-10 sm:w-10">
           </a>
         </li>
       </ul>
     </div>
   </nav>
 
-<!-- Main Content -->
-<main class="flex-grow flex items-center justify-center px-6 py-24">
-  <div class="bg-ecru/90 backdrop-blur-sm rounded-2xl shadow-xl max-w-5xl w-full px-8 sm:px-12 py-16 space-y-10 text-center">
+  <!-- Main Content -->
+  <main class="flex-grow flex items-center justify-center px-6 py-12">
+    <div class="bg-ecru/90 backdrop-blur-sm rounded-2xl shadow-xl max-w-5xl w-full px-8 sm:px-12 py-20 space-y-10 text-center">
 
-    <h1 class="text-4xl sm:text-5xl font-title font-bold text-ivy uppercase tracking-wide">
-      Drink Menu
-    </h1>
+      <h1 class="text-4xl sm:text-5xl font-title font-bold text-ivy uppercase tracking-wide">
+        Drink Menu
+      </h1>
 
-    <!-- Toggle Buttons -->
-    <div class="flex flex-wrap justify-center gap-4">
-      <button
-        onclick="showMenu('Tap_List')"
-        id="btn-tap_list"
-        class="menu-btn bg-ivy text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
-        Tap List
-      </button>
+      <div class="flex flex-wrap justify-center gap-4">
+        <button onclick="showMenu('Tap_List')" id="btn-tap_list"
+          class="menu-btn bg-ivy text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
+          Tap List
+        </button>
 
-      <button
-        onclick="showMenu('beer')"
-        id="btn-beer"
-        class="menu-btn bg-ivy/80 text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
-        Cans
-      </button>
+        <button onclick="showMenu('beer')" id="btn-beer"
+          class="menu-btn bg-ivy/80 text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
+          Cans
+        </button>
 
-      <button
-        onclick="showMenu('cocktail')"
-        id="btn-cocktail"
-        class="menu-btn bg-ivy/80 text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
-        Cocktails
-      </button>
+        <button onclick="showMenu('cocktail')" id="btn-cocktail"
+          class="menu-btn bg-ivy/80 text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
+          Cocktails
+        </button>
 
-      <button
-        onclick="showMenu('wine')"
-        id="btn-wine"
-        class="menu-btn bg-ivy/80 text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
-        Wine
-      </button>
+        <button onclick="showMenu('wine')" id="btn-wine"
+          class="menu-btn bg-ivy/80 text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
+          Wine
+        </button>
 
-      <button
-        onclick="showMenu('liquor')"
-        id="btn-liquor"
-        class="menu-btn bg-ivy/80 text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
-        Liquor
-      </button>
-    </div>
-
-    <!-- Menu Viewer -->
-    <div id="menu-container" class="w-full max-w-4xl mx-auto bg-dark/5 rounded-xl shadow-inner overflow-hidden">
-      <div id="menu-content" class="flex flex-col gap-4">
-        <img id="primary-menu-img" src="assets/Draft_List.jpg" alt="Menu" class="w-full h-auto block">
-        <img id="secondary-menu-img" src="assets/wine_menu_2.jpg" alt="Menu Page 2" class="w-full h-auto hidden">
+        <button onclick="showMenu('liquor')" id="btn-liquor"
+          class="menu-btn bg-ivy/80 text-ecru px-8 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-md hover:bg-gold hover:text-dark transition">
+          Liquor
+        </button>
       </div>
+
+      <div id="menu-container" class="w-full max-w-4xl mx-auto bg-dark/5 rounded-xl shadow-inner overflow-hidden">
+        <div id="menu-content" class="flex flex-col gap-4">
+          <img id="primary-menu-img" src="assets/Draft_List.jpg" class="w-full h-auto block">
+          <img id="secondary-menu-img" src="assets/wine_menu_2.jpg" class="w-full h-auto hidden">
+        </div>
+      </div>
+
+      <a id="menu-download" href="assets/Draft_List.pdf" target="_blank"
+        class="inline-block text-sm uppercase tracking-wide font-semibold text-ivy hover:text-gold transition">
+        Download Menu
+      </a>
+
     </div>
+  </main>
 
-    <!-- Download -->
-    <a
-      id="menu-download"
-      href="assets/Draft_List.pdf"
-      target="_blank"
-      class="inline-block text-sm uppercase tracking-wide font-semibold text-ivy hover:text-gold transition"
-    >
-      Download Menu
-    </a>
-
-  </div>
-</main>
-
-
-  <!-- Footer -->
   <footer class="relative bg-ecru border-t border-dark w-full text-center text-ecru tracking-wider uppercase py-6 font-figtree mt-12">
     <div class="absolute top-0 left-0 w-full h-16 overflow-hidden">
       <svg class="w-full h-full" viewBox="0 0 100 20" preserveAspectRatio="none">
@@ -211,7 +188,6 @@
     <p class="relative z-10 text-sm">&copy; 2025 Ivy Alley Social House | All Rights Reserved</p>
   </footer>
 
-    <!-- Menu Script -->
   <script>
     function showMenu(type) {
       const primaryImg = document.getElementById('primary-menu-img');
@@ -226,50 +202,38 @@
         liquor: document.getElementById('btn-liquor')
       };
 
-      // Reset button styles
       Object.values(buttons).forEach(btn => {
         btn.classList.remove('bg-ivy');
         btn.classList.add('bg-ivy/80');
       });
 
-      // Activate selected button
       buttons[type].classList.remove('bg-ivy/80');
       buttons[type].classList.add('bg-ivy');
 
-      
-      // Logic for Image Swapping
       if (type === 'Tap_List') {
         primaryImg.src = 'assets/Draft_List.jpg';
         secondaryImg.classList.add('hidden');
         download.href = 'assets/draft_List.pdf';
-      } 
-      else if (type === 'beer') {
+      } else if (type === 'beer') {
         primaryImg.src = 'assets/beer_menu.jpg';
         secondaryImg.classList.add('hidden');
         download.href = 'assets/beer_menu.pdf';
-      } 
-      else if (type === 'cocktail') {
+      } else if (type === 'cocktail') {
         primaryImg.src = 'assets/cocktail_menu.jpg';
         secondaryImg.classList.add('hidden');
         download.href = 'assets/cocktail_menu.pdf';
-      } 
-      else if (type === 'wine') {
+      } else if (type === 'wine') {
         primaryImg.src = 'assets/wine_menu_1.jpg';
-        secondaryImg.classList.add('hidden'); // Hide the second page
-        //secondaryImg.src = 'assets/wine_menu_2.jpg';
-        //secondaryImg.classList.remove('hidden'); // Show the second page
+        secondaryImg.classList.add('hidden');
         download.href = 'assets/wine_menu.pdf';
-      }
-      else if (type === 'liquor') {
+      } else if (type === 'liquor') {
         primaryImg.src = 'assets/liquor_menu_1.jpg';
-        //secondaryImg.classList.add('hidden'); // Hide the second page
         secondaryImg.src = 'assets/liquor_menu_2.jpg';
-        secondaryImg.classList.remove('hidden'); // Show the second page
+        secondaryImg.classList.remove('hidden');
         download.href = 'assets/liquor_menu.pdf';
       }
     }
   </script>
-
 
 </body>
 </html>

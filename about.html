@@ -4,21 +4,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coming Soon | About Us</title>
 
-  <!-- Favicon -->
+  <title>Duckpin Bowling in South Bend | Ivy Alley Social House</title>
+  <meta name="description" content="Reserve duckpin bowling in South Bend at Ivy Alley Social House. Perfect for groups, date nights, and events. Book your lane today!">
+  <meta name="keywords" content="duckpin bowling South Bend, bowling reservations South Bend, Ivy Alley bowling, things to do South Bend">
+
   <link rel="icon" type="image/svg+xml" href="assets/beer.svg">
 
-  <!-- Preconnect for fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&family=Josefin+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&family=Josefin+Sans:wght@400;600;700;900&display=swap"
-    rel="stylesheet">
-
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -29,7 +25,6 @@
             ecru: "#f0eadc",
             dark: "#2f2f2f",
             rust: "#9a3c00",
-            slate: "#4f697a",
             gold: "#c39a4d",
           },
           fontFamily: {
@@ -44,56 +39,33 @@
   <style>
     body {
       min-height: 100vh;
-      background-color: #f0eadc;
-      background-image:
+      padding-bottom: 80px;
+      background:
+        linear-gradient(rgba(240,234,220,0.85), rgba(240,234,220,0.95)),
         url('https://www.transparenttextures.com/patterns/linen.png'),
         url('assets/pillars.png');
-      background-repeat: repeat, no-repeat;
-      background-position: top left, center;
+      background-repeat: repeat, repeat, no-repeat;
+      background-position: center;
       background-size: cover;
-      background-attachment: fixed, fixed;
+      background-attachment: fixed;
       color: #2f2f2f;
       font-family: 'Figtree', sans-serif;
     }
 
-    a {
-      transition: color 0.2s ease;
-    }
-
-    a:hover {
-      color: #c39a4d;
-    }
-
     @media (max-width: 768px) {
       body {
-        background-image: url('https://www.transparenttextures.com/patterns/linen.png');
-        background-repeat: repeat;
-        background-position: top left;
-        background-size: cover;
+        background:
+          linear-gradient(rgba(240,234,220,0.9), rgba(240,234,220,0.95)),
+          url('https://www.transparenttextures.com/patterns/linen.png');
         background-attachment: scroll;
-        position: relative;
-      }
-
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('assets/pillars_narrow.png');
-        background-repeat: no-repeat;
-        background-size: 95%;
-        background-position: top center;
-        z-index: -1;
       }
     }
   </style>
 </head>
 
-<body class="flex flex-col min-h-screen relative z-10">
+<body class="flex flex-col min-h-screen">
 
-  <!-- Navbar -->
+  <!-- Navbar (MATCHED TO FOOD MENU PAGE) -->
   <nav class="bg-dark/90 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b-2 border-gold">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
 
@@ -122,6 +94,7 @@
             <img src="assets/calendar.svg" alt="Calendar icon" class="h-6 w-6 sm:h-10 sm:w-10">
           </a>
         </li>
+                <li><a href="catering.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Catering</span><img src="assets/Catering_Icon.png" class="h-6 w-6 sm:h-10 sm:w-10"></a></li>
         <li>
           <a href="about.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
             <span>Duckpin</span>
@@ -129,39 +102,85 @@
           </a>
         </li>
       </ul>
+
     </div>
   </nav>
 
-  <!-- Main Content -->
+  <!-- Main -->
   <main class="flex-grow flex items-center justify-center py-12">
-    <div class="max-w-2xl w-full px-6">
-      <section class="flex flex-col items-center space-y-8 text-center">
-        
-        <h1 class="text-4xl sm:text-5xl font-bold text-ivy font-title">
+    <div class="max-w-2xl w-full px-4">
+
+      <section class="bg-ecru/90 p-6 sm:p-8 rounded-xl shadow-lg text-center space-y-8">
+
+        <h1 class="text-3xl sm:text-5xl font-bold text-ivy font-title">
           Reserve a Spot!
         </h1>
 
         <a href="https://www.mybowlingpassport.com/6219/13552/book" target="_blank"
-          class="inline-block w-48 py-4 bg-rust text-ecru font-semibold font-figtree rounded-lg shadow-md hover:bg-gold hover:text-dark transition uppercase tracking-wide">
+          class="inline-block w-full sm:w-52 py-4 bg-rust text-ecru font-semibold rounded-lg shadow-md hover:bg-gold hover:text-dark transition uppercase tracking-wide">
           Book Now
         </a>
 
-        <p class="text-lg sm:text-xl text-dark leading-relaxed">
-          **Please arrive to your Duckpin Bowling reservation 10 minutes early. Your reservation begins at the scheduled time, even if you arrive late.
+        <p class="text-base sm:text-xl max-w-md mx-auto">
+          Arrive 10 minutes early. Your reservation begins at your scheduled time—even if you arrive late.
         </p>
-        
+
+        <div class="text-left space-y-4">
+          <h2 class="text-xl sm:text-2xl font-bold text-ivy text-center">
+            What Is Duckpin Bowling?
+          </h2>
+
+          <p class="max-w-md mx-auto">
+            Duckpin bowling uses smaller balls and shorter pins, making the game more challenging and fun.
+          </p>
+
+          <p class="max-w-md mx-auto">
+            Players get three rolls per frame, and the balls have no finger holes—perfect for all ages and skill levels.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-bold text-ivy">
+            House Rules
+          </h2>
+
+          <ul class="text-left max-w-md mx-auto list-disc list-inside space-y-1">
+            <li>Please do not stand on the lanes</li>
+            <li>No lobbing or bouncing the balls</li>
+            <li>No trick shots</li>
+            <li>Only roll when the light is green</li>
+            <li>Act like your grandma is watching 😉</li>
+            <li>Have fun!</li>
+          </ul>
+        </div>
+
+        <p class="text-xs text-dark/70 max-w-md mx-auto">
+          Damaged balls may result in a $110 replacement fee.
+        </p>
+
       </section>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="relative bg-ecru border-t border-dark w-full text-center text-ecru tracking-wider uppercase py-6 font-figtree mt-12">
-    <div class="absolute top-0 left-0 w-full h-16 overflow-hidden">
-      <svg class="w-full h-full" viewBox="0 0 100 20" preserveAspectRatio="none">
-        <polygon points="0,20 100,20 100,0 0,10" fill="#465f36" />
-      </svg>
+  <!-- Sticky Booking Bar -->
+  <div class="fixed bottom-0 left-0 w-full bg-dark border-t-2 border-gold shadow-lg z-50">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+
+      <span class="text-ecru text-sm sm:text-base font-semibold">
+        Ready to bowl?
+      </span>
+
+      <a href="https://www.mybowlingpassport.com/6219/13552/book" target="_blank"
+        class="bg-rust text-ecru px-5 py-2 rounded-md font-semibold hover:bg-gold hover:text-dark transition">
+        Book Now
+      </a>
+
     </div>
-    <p class="relative z-10 text-sm">&copy; 2025 Ivy Alley Social House | All Rights Reserved</p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-ecru border-t text-center py-6 mt-12">
+    <p class="text-sm">&copy; 2025 Ivy Alley Social House</p>
   </footer>
 
 </body>

@@ -4,19 +4,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coming Soon | About Us</title>
+  <title>About Us | Ivy Alley Social House</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Ivy Alley Social House offers duckpin bowling, stone-oven pizza, craft beer, cocktails, and family-friendly entertainment in Mishawaka, Indiana." />
+  <meta name="keywords" content="Ivy Alley, Social House, Duckpin Bowling, Pizza, Brewery, Craft Beer, Mishawaka Entertainment, Family Friendly" />
+  <meta name="author" content="Ivy Alley Social House" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="About Ivy Alley Social House" />
+  <meta property="og:description" content="A place for food, drinks, bowling, and community — discover what makes Ivy Alley special." />
+  <meta property="og:image" content="https://yourwebsite.com/assets/og-about.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwebsite.com/about.html" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Ivy Alley Social House",
+    "image": [
+      "https://yourwebsite.com/assets/bowling.jpg",
+      "https://yourwebsite.com/assets/pizza_oven.jpg",
+      "https://yourwebsite.com/assets/brewery.jpg"
+    ],
+    "description": "Ivy Alley Social House offers duckpin bowling, stone-oven pizza, craft beer, cocktails, and family-friendly entertainment in Mishawaka, Indiana.",
+    "url": "https://yourwebsite.com/about.html",
+    "telephone": "555-555-5555",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "321 W Wayne St.",
+      "addressLocality": "South Bend",
+      "addressRegion": "IN",
+      "postalCode": "46601",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "40.13552",
+      "longitude": "-85.6918"
+    },
+    "openingHours": "Tu-Su 11:00-23:00",
+    "servesCuisine": ["Pizza", "Sandwiches", "Salads", "Bar Food"],
+    "menu": "https://ivyalley.com/food-menu.html",
+    "sameAs": [
+      "https://www.facebook.com/ivyalleysocialhouse",
+      "https://www.instagram.com/ivy_alley_social_house"
+    ],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Duckpin Bowling", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "On-site Microbrewery", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Full Bar", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Family Friendly", "value": true }
+    ]
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/beer.svg">
 
-  <!-- Preconnect for fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&family=Josefin+Sans:wght@400;600;700;900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&family=Josefin+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -41,6 +92,7 @@
     }
   </script>
 
+  <!-- Background Styles -->
   <style>
     body {
       min-height: 100vh;
@@ -56,31 +108,16 @@
       font-family: 'Figtree', sans-serif;
     }
 
-    a {
-      transition: color 0.2s ease;
-    }
-
-    a:hover {
-      color: #c39a4d;
-    }
-
     @media (max-width: 768px) {
       body {
         background-image: url('https://www.transparenttextures.com/patterns/linen.png');
-        background-repeat: repeat;
-        background-position: top left;
-        background-size: cover;
         background-attachment: scroll;
-        position: relative;
       }
 
       body::before {
         content: "";
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         background-image: url('assets/pillars_narrow.png');
         background-repeat: no-repeat;
         background-size: 95%;
@@ -91,151 +128,91 @@
   </style>
 </head>
 
-<body class="flex flex-col min-h-screen relative z-10">
+<body class="flex flex-col min-h-screen">
 
   <!-- Navbar -->
   <nav class="bg-dark/90 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b-2 border-gold">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
 
-      <!-- Logo -->
-      <a href="index.html">
+      <a href="index.html" aria-label="Ivy Alley Home">
         <img src="assets/Ivy Alley_Line_Ecru.png" alt="Ivy Alley Logo" class="h-12 sm:h-16 w-auto">
       </a>
 
-      <!-- Links with icons -->
-      <ul class="flex gap-2 sm:gap-6 text-sm sm:text-base md:text-lg font-semibold font-figtree text-gold uppercase">
-        <li>
-          <a href="food-menu.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
-            <span>Food</span>
-            <img src="assets/pizza.svg" alt="Pizza icon" class="h-6 w-6 sm:h-10 sm:w-10">
-          </a>
-        </li>
-        <li>
-          <a href="beer-menu.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
-            <span>Drinks</span>
-            <img src="assets/beer.svg" alt="Beer icon" class="h-6 w-6 sm:h-10 sm:w-10">
-          </a>
-        </li>
-        <li>
-          <a href="events.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
-            <span>Events</span>
-            <img src="assets/calendar.svg" alt="Calendar icon" class="h-6 w-6 sm:h-10 sm:w-10">
-          </a>
-        </li>
-        <li>
-          <a href="bowling.html" class="hover:text-rust flex flex-col items-center sm:flex-row sm:items-center gap-1">
-            <span>Duckpin</span>
-            <img src="assets/bowling_ball.svg" alt="Bowling icon" class="h-6 w-6 sm:h-10 sm:w-10">
-          </a>
-        </li>
+      <ul class="flex gap-4 sm:gap-6 text-sm sm:text-base md:text-lg font-semibold font-figtree text-gold uppercase">
+        <li><a href="food-menu.html" class="hover:text-rust flex items-center gap-1"><span>Food</span><img src="assets/pizza.svg" alt="" class="h-6 w-6 sm:h-8 sm:w-8"></a></li>
+        <li><a href="beer-menu.html" class="hover:text-rust flex items-center gap-1"><span>Drinks</span><img src="assets/beer.svg" alt="" class="h-6 w-6 sm:h-8 sm:w-8"></a></li>
+        <li><a href="events.html" class="hover:text-rust flex items-center gap-1"><span>Events</span><img src="assets/calendar.svg" alt="" class="h-6 w-6 sm:h-8 sm:w-8"></a></li>
+        <li><a href="bowling.html" class="hover:text-rust flex items-center gap-1"><span>Duckpin</span><img src="assets/bowling_ball.svg" alt="" class="h-6 w-6 sm:h-8 sm:w-8"></a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Main Content -->
-<!-- Main Content -->
-<!-- Main Content -->
-<main class="flex-grow flex items-center justify-center px-6 py-24">
-  <div class="bg-ecru/90 backdrop-blur-sm rounded-2xl shadow-xl max-w-6xl w-full px-8 sm:px-12 py-16 space-y-16">
+  <main class="flex-grow flex items-center justify-center px-6 py-24">
+    <div class="bg-ecru/90 backdrop-blur-sm rounded-2xl shadow-xl max-w-6xl w-full px-8 sm:px-12 py-16 space-y-16">
 
-    <!-- Intro -->
-    <section class="space-y-6 text-center">
-      <h1 class="text-4xl sm:text-5xl font-bold text-ivy font-title">
-        About Ivy Alley Social House
-      </h1>
-      <p class="text-lg sm:text-xl text-dark">
-        Welcome to Ivy Alley Social House — where everyone’s invited and there’s something for every kind of fun.
-        From state-of-the-art duckpin bowling to live music and family-friendly entertainment, we’re a place to gather,
-        relax, and make memories.
-      </p>
-      <p class="text-lg sm:text-xl text-dark">
-        Our full kitchen specializes in high-temp, stone-oven pizza, but we also serve a fresh selection of sandwiches,
-        soups, and salads for every taste. Settle in with a pint from our on-site microbrewery or sip an expertly crafted
-        cocktail from our full bar — whatever you’re craving, we’ve got you covered.
-      </p>
-    </section>
+      <!-- Intro -->
+      <section class="space-y-6 text-center">
+        <h1 class="text-4xl sm:text-5xl font-bold text-ivy font-title">About Ivy Alley Social House</h1>
+        <p class="text-lg sm:text-xl text-dark leading-relaxed">
+          Ivy Alley Social House is where great food, craft drinks, and unforgettable experiences come together. Whether you're here for duckpin bowling, live music, or a night out with friends, we’ve created a space where everyone feels welcome.
+        </p>
+        <p class="text-lg sm:text-xl text-dark leading-relaxed">
+          Enjoy stone‑oven pizza, sandwiches, soups, salads, and a full bar featuring our on‑site microbrewery. From family outings to date nights, Ivy Alley is your new go‑to spot for good times.
+        </p>
+      </section>
 
-    <!-- Duckpin Bowling -->
-    <section class="grid md:grid-cols-2 gap-12 items-center">
-      <img
-        src="assets/bowling.jpg"
-        alt="Duckpin bowling lanes"
-        class="w-full rounded-xl shadow-lg"
-      />
-      <div class="space-y-4">
-        <h2 class="text-3xl font-bold text-ivy font-title">
-          Eight Lanes of Fun
-        </h2>
-        <p class="text-lg text-dark">
-          With eight duckpin lanes, there’s plenty of room for everyone — though reservations are always welcome if you
-          want to guarantee your spot.
-        </p>
-        <p class="text-lg text-dark">
-          Duckpin bowling features shorter lanes and smaller balls, making it easy for kids to join the fun while still
-          challenging even the most competitive adults. And yes, it's true: getting a strike is tougher than it looks.
-          Pro tip: roll slower than you think!
-        </p>
-      </div>
-    </section>
+      <!-- Duckpin Bowling -->
+      <section class="grid md:grid-cols-2 gap-12 items-center">
+        <img src="assets/bowling.jpg" alt="Duckpin bowling lanes at Ivy Alley" class="w-full rounded-xl shadow-lg" />
+        <div class="space-y-4">
+          <h2 class="text-3xl font-bold text-ivy font-title">Eight Lanes of Fun</h2>
+          <p class="text-lg text-dark leading-relaxed">
+            Our duckpin lanes offer fast‑paced fun for all ages. Smaller balls, shorter lanes, and a lively atmosphere make it perfect for families and competitive groups alike.
+          </p>
+          <p class="text-lg text-dark leading-relaxed">
+            Reservations are welcome — especially on busy nights — but walk‑ins are always encouraged.
+          </p>
+        </div>
+      </section>
 
-    <!-- Pizza -->
-      
-    <section class="grid md:grid-cols-2 gap-12 items-center">
-      <div class="space-y-4">
-        <h2 class="text-3xl font-bold text-ivy font-title">
-          Pizza Fired at 750°F
-        </h2>
-        <p class="text-lg text-dark">
-          Our roaring 750°F oven turns out irresistibly crisp, thin-crust pizzas loaded with flavor. We start with handmade,
-          cold-fermented dough, add your choice of house-made sauces, and top it with fresh mozzarella, provolone, and your
-          favorite toppings.
-        </p>
-        <p class="text-lg text-dark">
-          Mix, match, and create your perfect pie.
-        </p>
-      </div>
-      <img
-        src="assets/pizza_oven.jpg"
-        alt="Pizza Oven"
-        class="w-full rounded-xl shadow-lg"
-      />
-    </section>
+      <!-- Pizza -->
+      <section class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-4">
+          <h2 class="text-3xl font-bold text-ivy font-title">Pizza Fired at 750°F</h2>
+          <p class="text-lg text-dark leading-relaxed">
+            Our stone oven fires at 750°F, creating crisp, thin‑crust pizzas with bold flavor. Handmade dough, house‑made sauces, and fresh toppings make every pie unforgettable.
+          </p>
+          <p class="text-lg text-dark leading-relaxed">Build your own or choose from our signature creations.</p>
+        </div>
+        <img src="assets/pizza_oven.jpg" alt="Stone pizza oven at Ivy Alley" class="w-full rounded-xl shadow-lg" />
+      </section>
 
-    <!-- Brewery -->
-    <section class="grid md:grid-cols-2 gap-12 items-center">
-      <img
-        src="assets/brewery.jpg"
-        alt="On-site brewery"
-        class="w-full rounded-xl shadow-lg"
-      />
-      <div class="space-y-4">
-        <h2 class="text-3xl font-bold text-ivy font-title">
-          Craft Beer & Creative Cocktails
-        </h2>
-        <p class="text-lg text-dark">
-          At the heart of our bar is our microbrewery, where we transform grain, hops, and water into a variety of
-          distinctive beers.
-        </p>
-        <p class="text-lg text-dark">
-          Prefer something else? We proudly feature local distilleries and wineries alongside the classics you know and
-          love. Choose from margaritas on tap, a freshly made Old Fashioned, or a non-alcoholic cocktail inspired by our
-          friends at FunktioN/al in Mishawaka.
-        </p>
-      </div>
-    </section>
+      <!-- Brewery -->
+      <section class="grid md:grid-cols-2 gap-12 items-center">
+        <img src="assets/brewery.jpg" alt="Ivy Alley microbrewery" class="w-full rounded-xl shadow-lg" />
+        <div class="space-y-4">
+          <h2 class="text-3xl font-bold text-ivy font-title">Craft Beer & Creative Cocktails</h2>
+          <p class="text-lg text-dark leading-relaxed">
+            Our microbrewery produces a rotating selection of beers — from crisp lagers to bold ales. Prefer spirits? Our bar features local distilleries, classic cocktails, and creative non‑alcoholic options.
+          </p>
+          <p class="text-lg text-dark leading-relaxed">
+            Whether you're sipping a margarita on tap or trying something new, there’s always something to enjoy.
+          </p>
+        </div>
+      </section>
 
-  </div>
-</main>
-
+    </div>
+  </main>
 
   <!-- Footer -->
-  <footer class="relative bg-ecru border-t border-dark w-full text-center text-ecru tracking-wider uppercase py-6 font-figtree mt-12">
+  <footer class="relative bg-ecru border-t border-dark w-full text-center uppercase py-6 font-figtree mt-12">
     <div class="absolute top-0 left-0 w-full h-16 overflow-hidden">
       <svg class="w-full h-full" viewBox="0 0 100 20" preserveAspectRatio="none">
         <polygon points="0,20 100,20 100,0 0,10" fill="#465f36" />
       </svg>
     </div>
-    <p class="relative z-10 text-sm">&copy; 2025 Ivy Alley Social House | All Rights Reserved</p>
+    <p class="relative z-10 text-sm text-dark">&copy; 2025 Ivy Alley Social House | All Rights Reserved</p>
   </footer>
 
 </body>
