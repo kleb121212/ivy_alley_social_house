@@ -1,337 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ivy Alley Social House | Duckpin Bowling, Craft Beer & Food in South Bend</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
-  <link rel="icon" type="image/svg+xml" href="assets/beer.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&family=Josefin+Sans:wght@400;600;700;900&display=swap"
-    rel="stylesheet">
+<title>Ivy Alley Social House | Duckpin Bowling, Craft Beer & Food in South Bend, Indiana</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ivy: "#465f36",
-            ecru: "#f0eadc",
-            dark: "#2f2f2f",
-            rust: "#9a3c00",
-            gold: "#c39a4d",
-          },
-          fontFamily: {
-            figtree: ['Figtree', 'sans-serif'],
-            title: ['"Josefin Sans"', 'sans-serif']
-          },
-        }
-      }
+<meta name="description" content="Experience Ivy Alley Social House — South Bend’s boutique duckpin bowling alley with craft beer, cocktails, scratch-made food, and weekly events. Perfect for friends, families, and private parties.">
+
+<link rel="icon" type="image/svg+xml" href="assets/beer.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;900&family=Josefin+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors:{ivy:"#465f36",ecru:"#f0eadc",dark:"#2f2f2f",rust:"#9a3c00",gold:"#c39a4d"},
+      fontFamily:{figtree:["Figtree","sans-serif"],title:['"Josefin Sans"',"sans-serif"]}
     }
-  </script>
+  }
+}
+</script>
 
-  <style>
-    body {
-      min-height: 100vh;
-      background-color: #f0eadc;
-      background-image:
-        url('https://www.transparenttextures.com/patterns/linen.png'),
-        url('assets/pillars.png');
-      background-repeat: repeat, no-repeat;
-      background-position: top left, center;
-      background-size: cover;
-      background-attachment: fixed, fixed;
-      color: #2f2f2f;
-      font-family: 'Figtree', sans-serif;
-    }
+<!-- STRUCTURED DATA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Ivy Alley Social House",
+  "image": "https://ivyalley.com/assets/Ivy Alley_Horizontal_Charred.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "321 W. Wayne St",
+    "addressLocality": "South Bend",
+    "addressRegion": "IN",
+    "postalCode": "46601",
+    "addressCountry": "US"
+  },
+  "telephone": "+1-574-318-9593",
+  "url": "https://ivyalley.com",
+  "priceRange": "$$",
+  "servesCuisine": ["American", "Bar Food"],
+  "amenityFeature": [
+    {"@type": "LocationFeatureSpecification","name": "Duckpin Bowling","value": true},
+    {"@type": "LocationFeatureSpecification","name": "Craft Beer","value": true},
+    {"@type": "LocationFeatureSpecification","name": "Full Bar","value": true},
+    {"@type": "LocationFeatureSpecification","name": "Family Friendly","value": true}
+  ],
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification","dayOfWeek": "Monday","opens": "00:00","closes": "00:00"},
+    {"@type": "OpeningHoursSpecification","dayOfWeek": "Tuesday","opens": "16:00","closes": "22:00"},
+    {"@type": "OpeningHoursSpecification","dayOfWeek": "Wednesday","opens": "11:00","closes": "22:00"},
+    {"@type": "OpeningHoursSpecification","dayOfWeek": "Thursday","opens": "11:00","closes": "22:00"},
+    {"@type": "OpeningHoursSpecification","dayOfWeek": "Friday","opens": "11:00","closes": "23:00"},
+    {"@type": "OpeningHoursSpecification","dayOfWeek": "Saturday","opens": "11:00","closes": "23:00"},
+    {"@type": "OpeningHoursSpecification","dayOfWeek": "Sunday","opens": "11:00","closes": "20:00"}
+  ]
+}
+</script>
 
-    @media (max-width: 768px) {
-      body {
-        background-image: url('https://www.transparenttextures.com/patterns/linen.png');
-        background-repeat: repeat;
-        background-size: cover;
-        background-attachment: scroll;
-        position: relative;
-      }
-
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('assets/pillars_narrow.png');
-        background-repeat: no-repeat;
-        background-size: 95%;
-        background-position: top center;
-        z-index: -1;
-      }
-    }
-
-    a {
-      transition: color 0.2s ease;
-    }
-
-    a:hover {
-      color: #c39a4d;
-    }
-  </style>
+<style>
+body{
+  min-height:100vh;background-color:#f0eadc;
+  background-image:url('https://www.transparenttextures.com/patterns/linen.png'),url('assets/pillars.png');
+  background-repeat:repeat,no-repeat;background-position:top left,center;
+  background-size:cover;background-attachment:fixed,fixed;
+  color:#2f2f2f;font-family:'Figtree',sans-serif;
+}
+@media(max-width:768px){
+  body{background-image:url('https://www.transparenttextures.com/patterns/linen.png');background-repeat:repeat;background-size:cover;background-attachment:scroll;position:relative;}
+  body::before{content:"";position:fixed;top:0;left:0;width:100%;height:100%;background-image:url('assets/pillars_narrow.png');background-repeat:no-repeat;background-size:95%;background-position:top center;z-index:-1;}
+}
+a{transition:color .2s ease;}a:hover{color:#c39a4d;}
+</style>
 </head>
 
 <body class="flex flex-col min-h-screen text-dark font-figtree relative z-10">
 
-  <!-- HEADER (unchanged) -->
-  <nav class="bg-dark/90 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b-2 border-gold">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-      <a href="index.html">
-        <img src="assets/Ivy Alley_Line_Ecru.png" alt="Ivy Alley Logo" class="h-12 sm:h-16 w-auto">
-      </a>
-      <ul class="flex gap-2 sm:gap-6 text-sm sm:text-base md:text-lg font-semibold text-gold uppercase">
-        <li><a href="food-menu.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Food</span><img src="assets/pizza.svg" class="h-6 w-6 sm:h-10 sm:w-10" alt="Food icon"></a></li>
-        <li><a href="beer-menu.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Drinks</span><img src="assets/beer.svg" class="h-6 w-6 sm:h-10 sm:w-10" alt="Drinks icon"></a></li>
-        <li><a href="events.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Events</span><img src="assets/calendar.svg" class="h-6 w-6 sm:h-10 sm:w-10" alt="Events icon"></a></li>
-        <li>
-  <a href="Catering.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1">
-    <span>Catering</span>
-    <img src="assets/Catering_Icon.png" class="h-6 w-6 sm:h-10 sm:w-10" alt="Catering icon">
-  </a>
-</li>
+<!-- HEADER -->
+<nav class="bg-dark/90 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b-2 border-gold">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+    <a href="index.html"><img src="assets/Ivy Alley_Line_Ecru.png" alt="Ivy Alley Logo" class="h-12 sm:h-16 w-auto" loading="lazy" decoding="async"></a>
+    <ul class="flex gap-2 sm:gap-6 text-sm sm:text-base md:text-lg font-semibold text-gold uppercase">
+      <li><a href="food-menu.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Food</span><img src="assets/pizza.svg" class="h-6 w-6 sm:h-10 sm:w-10" loading="lazy"></a></li>
+      <li><a href="beer-menu.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Drinks</span><img src="assets/beer.svg" class="h-6 w-6 sm:h-10 sm:w-10" loading="lazy"></a></li>
+      <li><a href="events.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Events</span><img src="assets/calendar.svg" class="h-6 w-6 sm:h-10 sm:w-10" loading="lazy"></a></li>
+      <li><a href="Catering.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Catering</span><img src="assets/Catering_Icon.png" class="h-6 w-6 sm:h-10 sm:w-10" loading="lazy"></a></li>
+      <li><a href="about.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Duckpin</span><img src="assets/bowling_ball.svg" class="h-6 w-6 sm:h-10 sm:w-10" loading="lazy"></a></li>
+    </ul>
+  </div>
+</nav>
 
-        <li><a href="about.html" class="hover:text-rust flex flex-col sm:flex-row items-center gap-1"><span>Duckpin</span><img src="assets/bowling_ball.svg" class="h-6 w-6 sm:h-10 sm:w-10" alt="Duckpin icon"></a></li>
-      </ul>
+<!-- MAIN -->
+<main class="flex-grow flex flex-col items-center justify-start px-6 py-20">
+
+<!-- H1 (SEO) -->
+<h1 class="text-4xl sm:text-5xl font-title text-ivy mb-10 tracking-wide uppercase text-center 
+       bg-ecru/90 px-6 py-4 rounded-xl shadow-md inline-block">
+
+  Ivy Alley Social House — Duckpin Bowling, Craft Beer & Food in South Bend
+</h1>
+
+<!-- HERO -->
+<section class="w-full max-w-6xl bg-ecru/95 rounded-2xl shadow-xl px-8 sm:px-12 py-16 text-center border-l-4 border-gold">
+  <img src="assets/Ivy Alley_Horizontal_Charred.png" alt="Ivy Alley Social House Logo" class="w-4/5 max-w-5xl h-auto mb-8 mx-auto" loading="lazy" decoding="async">
+
+  <p class="text-2xl italic mb-8 text-ivy max-w-2xl mx-auto">
+    Step right into South Bend's lively hangout spot, where duckpin bowling and cold beer come together to create the perfect social destination for making memories with friends and family.
+  </p>
+
+  <p class="text-base text-dark/80 max-w-3xl mx-auto mt-6">
+    Located in the heart of downtown South Bend, Ivy Alley Social House blends duckpin bowling, craft beer, cocktails, and scratch-made food into a warm, welcoming space perfect for date nights, family outings, and private events.
+  </p>
+
+  <div class="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8">
+    <a href="food-menu.html" class="w-40 text-center py-3 bg-ivy text-ecru font-semibold rounded-lg shadow-md hover:bg-gold hover:text-dark transition uppercase tracking-wide">View Food Menu</a>
+    <a href="beer-menu.html" class="w-40 text-center py-3 bg-ivy text-ecru font-semibold rounded-lg shadow-md hover:bg-gold hover:text-dark transition uppercase tracking-wide">View Drink Menu</a>
+    <a href="https://ivy-alley.square.site/s/gift-cards" target="_blank" rel="noopener" class="w-40 text-center py-3 bg-rust text-ecru font-semibold rounded-lg shadow-md hover:bg-gold hover:text-dark transition uppercase tracking-wide">Gift Cards</a>
+    <a href="gallery.html" class="w-40 text-center py-3 bg-rust text-ecru font-semibold rounded-lg shadow-md hover:bg-gold hover:text-dark transition uppercase tracking-wide">Gallery</a>
+  </div>
+</section>
+
+<!-- QUICK FEATURES -->
+<section class="max-w-6xl w-full mx-auto mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+  <div class="bg-ecru/90 rounded-xl shadow-md px-4 py-6 text-center border border-ivy/30">
+    <img src="assets/pizza.svg" class="h-10 w-10 mx-auto mb-3" loading="lazy">
+    <h3 class="font-title text-lg uppercase tracking-wide text-ivy mb-1">Food</h3>
+    <p class="text-sm text-dark/80">Shareable bites, comfort favorites, and rotating specials.</p>
+  </div>
+
+  <div class="bg-ecru/90 rounded-xl shadow-md px-4 py-6 text-center border border-ivy/30">
+    <img src="assets/beer.svg" class="h-10 w-10 mx-auto mb-3" loading="lazy">
+    <h3 class="font-title text-lg uppercase tracking-wide text-ivy mb-1">Drinks</h3>
+    <p class="text-sm text-dark/80">Craft beer, cocktails, wine, and more on tap and in cans.</p>
+  </div>
+
+  <div class="bg-ecru/90 rounded-xl shadow-md px-4 py-6 text-center border border-ivy/30">
+    <img src="assets/bowling_ball.svg" class="h-10 w-10 mx-auto mb-3" loading="lazy">
+    <h3 class="font-title text-lg uppercase tracking-wide text-ivy mb-1">Duckpin</h3>
+    <p class="text-sm text-dark/80">Short lanes, small pins, big laughs for all ages.</p>
+  </div>
+
+  <div class="bg-ecru/90 rounded-xl shadow-md px-4 py-6 text-center border border-ivy/30">
+    <img src="assets/calendar.svg" class="h-10 w-10 mx-auto mb-3" loading="lazy">
+    <h3 class="font-title text-lg uppercase tracking-wide text-ivy mb-1">Events</h3>
+    <p class="text-sm text-dark/80">Trivia, parties, and private events in downtown South Bend.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="max-w-6xl w-full mx-auto mt-16 bg-ecru/95 rounded-2xl shadow-lg px-8 sm:px-12 py-14 border-l-4 border-ivy">
+  <h2 class="text-3xl sm:text-4xl font-title text-ivy mb-4 tracking-wide uppercase text-center">About Ivy Alley Social House</h2>
+  <p class="text-lg text-dark/90 max-w-3xl mx-auto text-center">
+    Ivy Alley Social House is a neighborhood gathering spot in downtown South Bend, Indiana,
+    blending duckpin bowling, craft beer, and a welcoming food menu into one cozy, social space.
+    Whether you're here for a casual night out, a family get-together, or a private event,
+    Ivy Alley is designed for connection, conversation, and good times.
+  </p>
+</section>
+
+<!-- PHOTO STRIP -->
+<section class="max-w-6xl w-full mx-auto mt-16">
+  <h2 class="text-2xl sm:text-3xl font-title text-ivy mb-4 tracking-wide uppercase text-center">A Peek Inside</h2>
+  <p class="text-sm text-dark/80 text-center mb-6">See the lanes, the bar, and the atmosphere that make Ivy Alley a favorite South Bend hangout.</p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <div class="rounded-xl overflow-hidden shadow-md bg-dark/20 h-40 sm:h-48">
+      <img src="assets/gallery_1.jpg" alt="Bowling lanes at Ivy Alley" class="w-full h-full object-cover" loading="lazy" decoding="async">
     </div>
-  </nav>
-
-  <!-- MAIN -->
-  <main class="flex-grow flex flex-col items-center justify-start px-6 py-20">
-
-    <!-- HERO -->
-    <section class="w-full max-w-6xl bg-ecru/95 rounded-2xl shadow-xl px-8 sm:px-12 py-16 text-center border-l-4 border-gold">
-      <img src="assets/Ivy Alley_Horizontal_Charred.png"
-           alt="Ivy Alley Social House Logo"
-           class="w-4/5 max-w-5xl h-auto mb-8 mx-auto" />
-
-      <p class="text-2xl italic mb-8 text-ivy max-w-2xl mx-auto">
-        Step right into South Bend's lively hangout spot, where duckpin bowling and cold beer come together to create the perfect social destination for making memories with friends and family.
-      </p>
-
-      <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
-        <a href="food-menu.html"
-          class="w-40 text-center py-3 bg-ivy text-ecru font-semibold rounded-lg shadow-md hover:bg-gold hover:text-dark transition uppercase tracking-wide">
-          View Food Menu
-        </a>
-        <a href="beer-menu.html"
-          class="w-40 text-center py-3 bg-ivy text-ecru font-semibold rounded-lg shadow-md hover:bg-gold hover:text-dark transition uppercase tracking-wide">
-          View Drink Menu
-        </a>
-        <a href="https://ivy-alley.square.site/s/gift-cards" target="_blank"
-          class="w-40 text-center py-3 bg-rust text-ecru font-semibold rounded-lg shadow-md hover:bg-gold hover:text-dark transition uppercase tracking-wide">
-          Gift Cards
-        </a>
-        <a href="gallery.html"
-          class="w-40 text-center py-3 bg-rust text-ecru font-semibold rounded-lg shadow-md hover:bg-gold hover:text-dark transition uppercase tracking-wide">
-          Gallery
-        </a>
-      </div>
-    </section>
-
-    <!-- QUICK FEATURES -->
-    <section class="max-w-6xl w-full mx-auto mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-      <div class="bg-ecru/90 rounded-xl shadow-md px-4 py-6 text-center border border-ivy/30">
-        <img src="assets/pizza.svg" alt="Food" class="h-10 w-10 mx-auto mb-3">
-        <h3 class="font-title text-lg uppercase tracking-wide text-ivy mb-1">Food</h3>
-        <p class="text-sm text-dark/80">Shareable bites, comfort favorites, and rotating specials.</p>
-      </div>
-      <div class="bg-ecru/90 rounded-xl shadow-md px-4 py-6 text-center border border-ivy/30">
-        <img src="assets/beer.svg" alt="Drinks" class="h-10 w-10 mx-auto mb-3">
-        <h3 class="font-title text-lg uppercase tracking-wide text-ivy mb-1">Drinks</h3>
-        <p class="text-sm text-dark/80">Craft beer, cocktails, wine, and more on tap and in cans.</p>
-      </div>
-      <div class="bg-ecru/90 rounded-xl shadow-md px-4 py-6 text-center border border-ivy/30">
-        <img src="assets/bowling_ball.svg" alt="Duckpin Bowling" class="h-10 w-10 mx-auto mb-3">
-        <h3 class="font-title text-lg uppercase tracking-wide text-ivy mb-1">Duckpin</h3>
-        <p class="text-sm text-dark/80">Short lanes, small pins, big laughs for all ages.</p>
-      </div>
-      <div class="bg-ecru/90 rounded-xl shadow-md px-4 py-6 text-center border border-ivy/30">
-        <img src="assets/calendar.svg" alt="Events" class="h-10 w-10 mx-auto mb-3">
-        <h3 class="font-title text-lg uppercase tracking-wide text-ivy mb-1">Events</h3>
-        <p class="text-sm text-dark/80">Trivia, parties, and private events in downtown South Bend.</p>
-      </div>
-    </section>
-
-    <!-- ABOUT / SEO SECTION -->
-    <section class="max-w-6xl w-full mx-auto mt-16 bg-ecru/95 rounded-2xl shadow-lg px-8 sm:px-12 py-14 border-l-4 border-ivy">
-      <h2 class="text-3xl sm:text-4xl font-title text-ivy mb-4 tracking-wide uppercase text-center">
-        About Ivy Alley Social House
-      </h2>
-      <p class="text-lg text-dark/90 max-w-3xl mx-auto text-center">
-        Ivy Alley Social House is a neighborhood gathering spot in downtown South Bend, Indiana,
-        blending duckpin bowling, craft beer, and a welcoming food menu into one cozy, social space.
-        Whether you're here for a casual night out, a family get-together, or a private event,
-        Ivy Alley is designed for connection, conversation, and good times.
-      </p>
-    </section>
-
-    <!-- PHOTO STRIP / GALLERY PREVIEW -->
-    <section class="max-w-6xl w-full mx-auto mt-16">
-      <h2 class="text-2xl sm:text-3xl font-title text-ivy mb-4 tracking-wide uppercase text-center">
-        A Peek Inside
-      </h2>
-      <p class="text-sm text-dark/80 text-center mb-6">
-        See the lanes, the bar, and the atmosphere that make Ivy Alley a favorite South Bend hangout.
-      </p>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div class="rounded-xl overflow-hidden shadow-md bg-dark/20 h-40 sm:h-48">
-          <img src="assets/gallery_1.jpg" alt="Bowling lanes at Ivy Alley" class="w-full h-full object-cover">
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-md bg-dark/20 h-40 sm:h-48">
-          <img src="assets/gallery_2.jpg" alt="Craft beer and drinks at the bar" class="w-full h-full object-cover">
-        </div>
-        <div class="rounded-xl overflow-hidden shadow-md bg-dark/20 h-40 sm:h-48">
-          <img src="assets/gallery_3.jpg" alt="Guests enjoying Ivy Alley Social House" class="w-full h-full object-cover">
-        </div>
-      </div>
-      <div class="text-center mt-4">
-        <a href="gallery.html" class="text-sm uppercase tracking-wide font-semibold text-ivy hover:text-gold underline">
-          View Full Gallery
-        </a>
-      </div>
-    </section>
-
-    <!-- HOURS + CONTACT (2-COLUMN) -->
-    <section class="max-w-6xl w-full mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 gap-12">
-
-      <!-- HOURS -->
-      <div class="bg-dark/85 rounded-2xl shadow-lg border-l-4 border-gold px-8 sm:px-12 py-16 text-center">
-        <h2 class="text-3xl sm:text-4xl font-title text-gold mb-6 tracking-wide uppercase">Hours</h2>
-        <p class="text-lg text-ecru leading-relaxed">
-          Monday: Closed<br>
-          Tuesday: 4 PM – 10 PM<br>
-          Wednesday: 11 AM – 10 PM<br>
-          Thursday: 11 AM – 10 PM<br>
-          Friday: 11 AM – 11 PM<br>
-          Saturday: 11 AM – 11 PM<br>
-          Sunday: 11 AM – 8 PM
-        </p>
-      </div>
-
-      <!-- CONTACT -->
-      <div class="bg-ecru/95 rounded-2xl shadow-lg border-r-4 border-ivy px-8 sm:px-12 py-16 text-dark">
-        <h2 class="text-3xl sm:text-4xl font-title text-ivy mb-6 tracking-wide uppercase">Contact</h2>
-
-        <div class="space-y-3 text-base sm:text-lg">
-          <p><strong>About Us:</strong>
-            <a href="about_us.html" target="_blank" class="text-rust hover:text-gold underline">Learn more about our story</a>
-          </p>
-
-          <p><strong>Email:</strong>
-            <a href="mailto:contact@ivyalleysocial.com" class="text-rust hover:text-gold underline">
-              contact@ivyalleysocial.com
-            </a>
-          </p>
-
-          <p><strong>Phone:</strong>
-            <a href="tel:(574)318-9593" class="text-rust hover:text-gold underline">
-              (574) 318-9593
-            </a>
-          </p>
-
-          <p><strong>Address:</strong>
-            <a href="https://www.google.com/maps/place/Ivy+Alley+Social+House/" target="_blank" class="text-rust hover:text-gold underline">
-              321 W. Wayne St. South Bend, IN
-            </a>
-          </p>
-
-          <p><strong>Facebook:</strong>
-            <a href="https://www.facebook.com/share/12JWpbcXHDR/" target="_blank" class="text-rust hover:text-gold underline">Visit our page</a>
-          </p>
-
-          <p><strong>Instagram:</strong>
-            <a href="https://www.instagram.com/ivy_alley_social_house" target="_blank" class="text-rust hover:text-gold underline">Visit our page</a>
-          </p>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- WHAT'S HAPPENING / FEATURED -->
-    <section class="max-w-6xl w-full mx-auto mt-20 bg-ecru/95 rounded-2xl shadow-lg px-8 sm:px-12 py-16 border-l-4 border-gold">
-      <h2 class="text-3xl sm:text-4xl font-title text-ivy mb-4 tracking-wide uppercase text-center">
-        What’s Happening at Ivy Alley
-      </h2>
-      <p class="text-sm text-dark/80 text-center mb-8">
-        Highlight weekly events, specials, or rotating features here to keep the homepage feeling fresh.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm sm:text-base">
-        <div class="bg-ecru rounded-xl border border-ivy/30 px-4 py-5 shadow-sm">
-          <h3 class="font-semibold text-ivy mb-2 uppercase tracking-wide text-xs">Weekly</h3>
-          <p class="font-title text-lg mb-1">Trivia Night</p>
-          <p class="text-dark/80">Gather your team and test your knowledge over great beer and bites.</p>
-        </div>
-        <div class="bg-ecru rounded-xl border border-ivy/30 px-4 py-5 shadow-sm">
-          <h3 class="font-semibold text-ivy mb-2 uppercase tracking-wide text-xs">Special</h3>
-          <p class="font-title text-lg mb-1">Rotating Tap Features</p>
-          <p class="text-dark/80">Ask about what’s new from Bucket Head Brewing and guest taps.</p>
-        </div>
-        <div class="bg-ecru rounded-xl border border-ivy/30 px-4 py-5 shadow-sm">
-          <h3 class="font-semibold text-ivy mb-2 uppercase tracking-wide text-xs">Events</h3>
-          <p class="font-title text-lg mb-1">Private Parties</p>
-          <p class="text-dark/80">Book Ivy Alley for birthdays, team outings, or celebrations.</p>
-        </div>
-      </div>
-
-      <div class="text-center mt-6">
-        <a href="events.html" class="text-sm uppercase tracking-wide font-semibold text-ivy hover:text-gold underline">
-          View Events & Details
-        </a>
-      </div>
-    </section>
-
-    <!-- MAP / FIND US -->
-    <section class="max-w-6xl w-full mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
-      <div class="bg-ecru/95 rounded-2xl shadow-lg px-8 sm:px-12 py-14 border-l-4 border-ivy flex flex-col justify-center">
-        <h2 class="text-2xl sm:text-3xl font-title text-ivy mb-4 tracking-wide uppercase">
-          Find Us in South Bend
-        </h2>
-        <p class="text-base sm:text-lg text-dark/90 mb-4">
-          Ivy Alley Social House is located in the heart of downtown South Bend, just steps away from local shops,
-          restaurants, and nightlife. Make us your starting point—or your all-night hangout.
-        </p>
-        <p class="font-semibold text-ivy">
-          321 W. Wayne St. South Bend, IN
-        </p>
-        <a href="https://www.google.com/maps/place/Ivy+Alley+Social+House/" target="_blank"
-           class="mt-4 inline-block text-sm uppercase tracking-wide font-semibold text-rust hover:text-gold underline">
-          Open in Google Maps
-        </a>
-      </div>
-
-      <div class="rounded-2xl overflow-hidden shadow-lg bg-dark/20 h-64 md:h-72">
-        <!-- You can replace this iframe with a static image if you prefer -->
-        <iframe
-          title="Ivy Alley Social House Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2967.640969732046!2d-86.2574046!3d41.6737819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8816cd515eada11f%3A0x335bb6542db6df76!2sIvy%20Alley%20Social%20House!5e0!3m2!1sen!2sus!4v1700000000000"
-          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="relative bg-ecru border-t border-dark w-full text-center text-ecru tracking-wider uppercase py-6 font-figtree mt-12">
-    <div class="absolute top-0 left-0 w-full h-16 overflow-hidden">
-      <svg class="w-full h-full" viewBox="0 0 100 20" preserveAspectRatio="none">
-        <polygon points="0,20 100,20 100,0 0,10" fill="#465f36" />
-      </svg>
+    <div class="rounded-xl overflow-hidden shadow-md bg-dark/20 h-40 sm:h-48">
+      <img src="assets/gallery_2.jpg" alt="Craft beer and drinks at the bar" class="w-full h-full object-cover" loading="lazy" decoding="async">
     </div>
-    <p class="relative z-10 text-sm">&copy; 2025 Ivy Alley Social House | All Rights Reserved</p>
-  </footer>
+    <div class="rounded-xl overflow-hidden shadow-md bg-dark/20 h-40 sm:h-48">
+      <img src="assets/gallery_3.jpg" alt="Guests enjoying Ivy Alley Social House" class="w-full h-full object-cover" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="gallery.html" class="text-sm uppercase tracking-wide font-semibold text-ivy hover:text-gold underline">View Full Gallery</a>
+  </div>
+</section>
+
+<!-- HOURS + CONTACT -->
+<section class="max-w-6xl w-full mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 gap-12">
+
+<div class="bg-dark/85 rounded-2xl shadow-lg border-l-4 border-gold px-8 sm:px-12 py-16 text-center">
+  <h2 class="text-3xl sm:text-4xl font-title text-gold mb-6 tracking-wide uppercase">Hours</h2>
+  <p class="text-lg text-ecru leading-relaxed">
+    Monday - Thursday: Temporarily Closed<br>
+    Friday: 11 AM – 11 PM<br>
+    Saturday: 11 AM – 11 PM<br>
+    Sunday: 11 AM – 8 PM
+  </p>
+</div>
+
+<div class="bg-ecru/95 rounded-2xl shadow-lg border-r-4 border-ivy px-8 sm:px-12 py-16 text-dark">
+  <h2 class="text-3xl sm:text-4xl font-title text-ivy mb-6 tracking-wide uppercase">Contact</h2>
+
+  <div class="space-y-3 text-base sm:text-lg">
+    <p><strong>About Us:</strong> <a href="about.html" class="text-rust hover:text-gold underline">Learn more about our story</a></p>
+    <p><strong>Email:</strong> <a href="mailto:contact@ivyalleysocial.com" class="text-rust hover:text-gold underline">contact@ivyalleysocial.com</a></p>
+    <p><strong>Phone:</strong> <a href="tel:5743189593" class="text-rust hover:text-gold underline">(574) 318-9593</a></p>
+    <p><strong>Address:</strong> <a href="https://www.google.com/maps/place/Ivy+Alley+Social+House/" target="_blank" rel="noopener" class="text-rust hover:text-gold underline">321 W. Wayne St. South Bend, IN</a></p>
+    <p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/12JWpbcXHDR/" target="_blank" rel="noopener" class="text-rust hover:text-gold underline">Visit our page</a></p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/ivy_alley_social_house" target="_blank" rel="noopener" class="text-rust hover:text-gold underline">Visit our page</a></p>
+  </div>
+
+  <!-- NAP BLOCK (Local SEO) -->
+  <div class="text-center mt-6 text-dark/80 text-sm">
+    <p><strong>Ivy Alley Social House</strong></p>
+    <p>321 W. Wayne St, South Bend, IN 46601</p>
+    <p>(574) 318-9593</p>
+  </div>
+</div>
+
+</section>
+
+<!-- WHAT'S HAPPENING -->
+<section class="max-w-6xl w-full mx-auto mt-20 bg-ecru/95 rounded-2xl shadow-lg px-8 sm:px-12 py-16 border-l-4 border-gold">
+  <h2 class="text-3xl sm:text-4xl font-title text-ivy mb-4 tracking-wide uppercase text-center">What’s Happening at Ivy Alley</h2>
+  <p class
+  <!-- WHAT'S HAPPENING -->
+<section class="max-w-6xl w-full mx-auto mt-20 bg-ecru/95 rounded-2xl shadow-lg px-8 sm:px-12 py-16 border-l-4 border-gold">
+  <h2 class="text-3xl sm:text-4xl font-title text-ivy mb-4 tracking-wide uppercase text-center">What’s Happening at Ivy Alley</h2>
+  <p class="text-sm text-dark/80 text-center mb-8">
+    Highlight weekly events, specials, or rotating features here to keep the homepage feeling fresh.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm sm:text-base">
+    <div class="bg-ecru rounded-xl border border-ivy/30 px-4 py-5 shadow-sm">
+      <h3 class="font-semibold text-ivy mb-2 uppercase tracking-wide text-xs">Weekly</h3>
+      <p class="font-title text-lg mb-1">Trivia Night</p>
+      <p class="text-dark/80">Gather your team and test your knowledge over great beer and bites.</p>
+    </div>
+    <div class="bg-ecru rounded-xl border border-ivy/30 px-4 py-5 shadow-sm">
+      <h3 class="font-semibold text-ivy mb-2 uppercase tracking-wide text-xs">Special</h3>
+      <p class="font-title text-lg mb-1">Rotating Tap Features</p>
+      <p class="text-dark/80">Ask about what’s new from Bucket Head Brewing and guest taps.</p>
+    </div>
+    <div class="bg-ecru rounded-xl border border-ivy/30 px-4 py-5 shadow-sm">
+      <h3 class="font-semibold text-ivy mb-2 uppercase tracking-wide text-xs">Events</h3>
+      <p class="font-title text-lg mb-1">Private Parties</p>
+      <p class="text-dark/80">Book Ivy Alley for birthdays, team outings, or celebrations.</p>
+    </div>
+  </div>
+
+  <div class="text-center mt-6">
+    <a href="events.html" class="text-sm uppercase tracking-wide font-semibold text-ivy hover:text-gold underline">
+      View Events &amp; Details
+    </a>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="max-w-6xl w-full mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
+  <div class="bg-ecru/95 rounded-2xl shadow-lg px-8 sm:px-12 py-14 border-l-4 border-ivy flex flex-col justify-center">
+    <h2 class="text-2xl sm:text-3xl font-title text-ivy mb-4 tracking-wide uppercase">Find Us in South Bend</h2>
+    <p class="text-base sm:text-lg text-dark/90 mb-4">
+      Ivy Alley Social House is located in the heart of downtown South Bend, just steps away from local shops,
+      restaurants, and nightlife. Make us your starting point—or your all-night hangout.
+    </p>
+    <p class="font-semibold text-ivy">321 W. Wayne St. South Bend, IN</p>
+    <a href="https://www.google.com/maps/place/Ivy+Alley+Social+House/" target="_blank" rel="noopener"
+       class="mt-4 inline-block text-sm uppercase tracking-wide font-semibold text-rust hover:text-gold underline">
+      Open in Google Maps
+    </a>
+  </div>
+
+  <div class="rounded-2xl overflow-hidden shadow-lg bg-dark/20 h-64 md:h-72">
+    <iframe
+      title="Ivy Alley Social House Map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2967.640969732046!2d-86.2574046!3d41.6737819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8816cd515eada11f%3A0x335bb6542db6df76!2sIvy%20Alley%20Social%20House!5e0!3m2!1sen!2sus!4v1700000000000"
+      width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="relative bg-ecru border-t border-dark w-full text-center text-ecru tracking-wider uppercase py-6 font-figtree mt-12">
+  <div class="absolute top-0 left-0 w-full h-16 overflow-hidden">
+    <svg class="w-full h-full" viewBox="0 0 100 20" preserveAspectRatio="none">
+      <polygon points="0,20 100,20 100,0 0,10" fill="#465f36"></polygon>
+    </svg>
+  </div>
+  <p class="relative z-10 text-sm">&copy; 2025 Ivy Alley Social House | All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
