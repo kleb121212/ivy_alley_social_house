@@ -4,9 +4,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // EVENTS — supports one-time & recurring
   const events = [
+        // Friday Night Events
+    {
+      Name: "Trivia Night!",
+      Description: "6:30pm: Hosted by Geeks Who Drink! Prizes for top teams!",
+      Date: "2026-06-05",
+      Recurrence: {
+        type: "weekly",
+        interval: 1,
+        endDate: "2030-07-31"
+      }
+    },
+    {
+      Name: "",
+      Description: "$2 off all Bucket Head Brewery Drafts\n$2 off 12\" Pizzas!",
+      Date: "2026-06-05",
+      Recurrence: {
+        type: "weekly",
+        interval: 1,
+        endDate: "2030-07-31"
+      }
+    },
     // Thursday Night Events
     {
-      Name: "Trivia Night",
+      Name: "",
       Description: "Hosted by Geeks Who Drink! Prizes for top teams!",
       Date: "2026-04-02",
       Recurrence: {
@@ -16,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     },
     {
-      Name: "Specials",
+      Name: "",
       Description: "$2 off all Bucket Head Brewery Drafts\n$2 off 12\" Pizzas!",
       Date: "2026-04-02",
       Recurrence: {
@@ -26,16 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     },
     // Wednesday Night Events
-    { Name: "Live Music:", Description: "Featuring Tim Velez!!", Date: "2026-04-15" },
-    { Name: "Live Music:", Description: "Featuring Jake from StarHeart!!", Date: "2026-04-22" },
-    { Name: "Live Music:", Description: "Featuring Jess Jones!!", Date: "2026-04-29" },
-    { Name: "Live Music:", Description: "Featuring Donald Savoie!!", Date: "2026-05-06" },
-    { Name: "Live Music:", Description: "Featuring Cloe Klaus!!", Date: "2026-05-13" },
-    { Name: "Live Music:", Description: "Featuring Joshua Rude!!", Date: "2026-05-20" },
-    { Name: "Live Music:", Description: "Featuring TBD!!", Date: "2026-05-27" },
+    
+
 
     {
-      Name: "Specials",
+      Name: "",
       Description: "25% off Wine\n$2 off Apps\n$15 Beer Buckets",
       Date: "2026-04-01",
       Recurrence: {
@@ -44,13 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
         endDate: "2030-06-30"
       }
     },
+    // Tuesday Night Events
+ 
 
-    { Name: "Emergency Responder Night:", Description: "25% off Bill (Except Alcohol) with Badge!!", Date: "2026-04-14" },
-    { Name: "Whiskey Sampling-Indiana:", Description: "Guided Sampling of 5 Indiana made Whiskeys with snacks included. $45 Message us to RSVP. Walkins welcome!", Date: "2026-04-21" },
-    { Name: "Board Game Night:", Description: "Bring a friend, Find a Friend!\nBring a Game, Find a Game!", Date: "2026-04-28" },
 
     {
-      Name: "Specials",
+      Name: "",
       Description: "$3 Tacos\n$5 Draft Margs\n$5 Boliche Lager",
       Date: "2026-04-07",
       Recurrence: {
