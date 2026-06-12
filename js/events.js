@@ -3,78 +3,98 @@ document.addEventListener("DOMContentLoaded", () => {
   const eventsNav = document.getElementById("events-nav");
 
   // EVENTS — supports one-time & recurring
-  const events = [
-        // Friday Night Events
-    {
-      Name: "Trivia Night!",
-      Description: "6:30pm: Hosted by Geeks Who Drink! Prizes for top teams!",
-      Date: "2026-06-05",
-      Recurrence: {
-        type: "weekly",
-        interval: 1,
-        endDate: "2030-07-31"
-      }
-    },
-    {
-      Name: "",
-      Description: "$2 off all Bucket Head Brewery Drafts\n$2 off 12\" Pizzas!",
-      Date: "2026-06-05",
-      Recurrence: {
-        type: "weekly",
-        interval: 1,
-        endDate: "2030-07-31"
-      }
-    },
-    // Thursday Night Events
-    {
-      Name: "",
-      Description: "Hosted by Geeks Who Drink! Prizes for top teams!",
-      Date: "2026-04-02",
-      Recurrence: {
-        type: "weekly",
-        interval: 1,
-        endDate: "2030-06-30"
-      }
-    },
-    {
-      Name: "",
-      Description: "$2 off all Bucket Head Brewery Drafts\n$2 off 12\" Pizzas!",
-      Date: "2026-04-02",
-      Recurrence: {
-        type: "weekly",
-        interval: 1,
-        endDate: "2030-06-30"
-      }
-    },
-    // Wednesday Night Events
-    
-
-
-    {
-      Name: "",
-      Description: "25% off Wine\n$2 off Apps\n$15 Beer Buckets",
-      Date: "2026-04-01",
-      Recurrence: {
-        type: "weekly",
-        interval: 1,
-        endDate: "2030-06-30"
-      }
-    },
-    // Tuesday Night Events
- 
-
-
-    {
-      Name: "",
-      Description: "$3 Tacos\n$5 Draft Margs\n$5 Boliche Lager",
-      Date: "2026-04-07",
-      Recurrence: {
-        type: "weekly",
-        interval: 1,
-        endDate: "2030-06-30"
-      }
+const events = [
+  // Friday Night Events
+  {
+    //Name: "Trivia Night!",
+    Description: "6:30pm: Hosted by Geeks Who Drink! Prizes for top teams!",
+    Date: "2026-06-05",
+    Recurrence: {
+      type: "weekly",
+      interval: 1,
+      endDate: "2030-07-31"
     }
-  ];
+  },
+  {
+    Name: "",
+    Description: "$2 off all Bucket Head Brewery Drafts\n$2 off 12\" Pizzas!",
+    Date: "2026-06-05",
+    Recurrence: {
+      type: "weekly",
+      interval: 1,
+      endDate: "2030-07-31"
+    }
+  },
+
+  // Thursday Night Events
+  {
+    Name: "",
+    Description: "Hosted by Geeks Who Drink! Prizes for top teams!",
+    Date: "2026-04-02",
+    Recurrence: {
+      type: "weekly",
+      interval: 1,
+      endDate: "2030-06-30"
+    }
+  },
+  {
+    Name: "",
+    Description: "$2 off all Bucket Head Brewery Drafts\n$2 off 12\" Pizzas!",
+    Date: "2026-04-02",
+    Recurrence: {
+      type: "weekly",
+      interval: 1,
+      endDate: "2030-06-30"
+    }
+  },
+
+  // Wednesday Night Events
+  {
+    Name: "",
+    Description: "25% off Wine\n$2 off Apps\n$15 Beer Buckets",
+    Date: "2026-04-01",
+    Recurrence: {
+      type: "weekly",
+      interval: 1,
+      endDate: "2030-06-30"
+    }
+  },
+
+  // Tuesday Night Events
+  {
+    Name: "",
+    Description: "$3 Tacos\n$5 Draft Margs\n$5 Boliche Lager",
+    Date: "2026-04-07",
+    Recurrence: {
+      type: "weekly",
+      interval: 1,
+      endDate: "2030-06-30"
+    }
+  },
+
+  // ⭐ One‑time Events
+      {
+    Name: "Live Music – Dave Zane & Company",
+    Description: "5:30pm–7:30pm • No cover",
+    Date: "2026-06-14"
+  },
+    {
+    Name: "Paint Party!! Sunday Funday!",
+    Description: "1pm–3pm • All Suppplies Provided",
+    Date: "2026-06-14"
+  },
+    {
+    Name: "Live Music - A Boy & A Girl",
+    Description: "9pm–11pm • No cover",
+    Date: "2026-06-12"
+  },
+    {
+    Name: "Live Music – Bobby Hunt & The Day Drinkers",
+    Description: "8pm–11pm • No cover",
+    Date: "2026-06-26"
+  }
+];
+
 
   // Extract unique months from events
   const months = [...new Set(events.map(e => {
